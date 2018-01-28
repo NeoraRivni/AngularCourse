@@ -1,0 +1,12 @@
+<p>
+ please insert your name and password
+</p>
+<label>
+Name: 
+<input type="text" [(ngModel)]="currentWorker.name"/>
+</label>
+<label>
+password: 
+<input type="text" [(ngModel)]="currentWorker.password"/>
+</label>
+<button type="button" (click)="checkLogin()">Login</button>
