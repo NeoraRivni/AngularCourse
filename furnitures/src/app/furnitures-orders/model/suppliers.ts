@@ -1,3 +1,4 @@
 export class Supplier {
-    constructor(readonly supplierId:number, readonly supplierName: string, readonly supplierPhone:string){}
+    constructor(readonly id:number, readonly supplierName: string, readonly supplierPhone:string){}
 }
+// לבדוק מאפיין property bag

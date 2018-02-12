@@ -1,0 +1,70 @@
+{
+    "workers":[
+        {
+            "id":1,
+            "workerName": "David", 
+            "workerPassword": "123",
+            "workerPhone":"123"
+        },
+        {
+            "id":2,
+            "workerName": "Hodaya", 
+            "workerPassword": "456",
+            "workerPhone":"456"
+        },
+        {
+            "id":3,
+            "workerName": "Dina", 
+            "workerPassword": "789",
+            "workerPhone":"789"
+        }
+    ],
+    "suppliers":[
+        {
+            "id":1, 
+            "supplierName": "Gai", 
+            "supplierPhone":"1234"
+        },
+        {
+            "id":2, 
+            "supplierName": "Ben", 
+            "supplierPhone":"3456"
+        },
+        {
+            "id":3, 
+            "supplierName": "Omer", 
+            "supplierPhone":"5678"
+        }
+    ],
+    "furnitures":[
+        {
+            "id":1, 
+            "furnitureName": "maduim table for 12...", 
+            "supplierId":2, 
+            "furnitureColor":"brown", 
+            "furnitureSize":"1.5*0.4", 
+            "furnitureMaterial":"metirial", 
+            "furniturePrise":1000
+        },
+        {
+            "id":2, 
+            "furnitureName": "large table for 12...", 
+            "supplierId":1, 
+            "furnitureColor":"black", 
+            "furnitureSize":"1.5*0.4", 
+            "furnitureMaterial":"metirial", 
+            "furniturePrise":1000
+        },
+        {
+            "id":3, 
+            "furnitureName": "small table for 4...", 
+            "supplierId":3, 
+            "furnitureColor":"white", 
+            "furnitureSize":"1*0.4", 
+            "furnitureMaterial":"metirial", 
+            "furniturePrise":500
+        }
+    ]
+    
+    
+}

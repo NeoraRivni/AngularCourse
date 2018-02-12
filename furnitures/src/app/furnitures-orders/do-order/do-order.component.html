@@ -1,14 +1,16 @@
-<p>
-  please select supplier name
- </p>
- <p>
-  <label>
-    Supplier name
-      <select [(ngModel)]="newOrder.supplierName">
-          <option value="Oren">Oren</option>
-          <option value="Ikea">Ikea</option>
-          
+
+<div>
+    please select worker id:
+    <input type=number [(ngModel)]="currentOrder.workerId"/>
+</div>
+<div>
+    please select supplier name:
+      <select [(ngModel)]="currentOrder.supplierId">
+          <option *ngFor="let s of suppliers" [value]="s.id">{{s.supplierName}}</option>       
       </select>
-  </label>
-</p>
- //לבנות טבלה מתאימה לספק
+</div>
+<div>
+    <button type="button" (click)="searchForFurnitures()">Search</button>
+</div>
+
+<div *ngFor="let f of furnitures" >{{f.furnitureName || f.furnitureMaterial}}</div>

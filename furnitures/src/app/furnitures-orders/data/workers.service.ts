@@ -1,25 +1,23 @@
 import { Worker } from "../model/workers";
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class WorkersService {
-    private workers = {
-        "David": new Worker(1,"David","123","123"),
-        "Hodaya": new Worker(2,"Hodaya","456","456"),
-        "Dina": new Worker(3,"Dina","789","789")
+    baseUrl: string="http://localhost:3000";
+
+    constructor(private httpClient:HttpClient){
+        
     }
     
-    checkIfWorkerExists(workerName:string,workerPass:string){
-        let worker : Worker = this.workers[workerName];
-        if(!worker){
-            throw new Error('Worker not found');
+    async checkIfWorkerExists(workerName:string,workerPass:string):Promise<string>{
+        let workersUrl = this.baseUrl+"/workers?workerName="+workerName+"&workerPassword="+workerPass;
+        let workerFromDB = await this.httpClient.get<Worker[]>(workersUrl).toPromise();
+        if(workerFromDB.length>0){
+            return "Welcome!";
         }
-        if(worker.workerPassword!=workerPass){
-            throw new Error('Password is wrong');
+        else{
+            return "Sorry, there is no such a worker in the sustem";
         }
-        throw new Error('welocome!!');
-    }
-
-    checkmandatoy():boolean{
-        //check if...
-        return true;
     }
 }

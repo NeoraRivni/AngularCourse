@@ -12,11 +12,15 @@ export class LoginComponent implements OnInit {
   constructor(private workerService:WorkersService) { }
 
   private currentWorker:WorkerViewModel = new WorkerViewModel();
+  private message:string;
   ngOnInit() {
   }
 
   checkLogin(){
-    this.workerService.checkIfWorkerExists(this.currentWorker.name,this.currentWorker.password);
+    debugger;
+    this.workerService.checkIfWorkerExists(this.currentWorker.name,this.currentWorker.password).then(result=>{
+      this.message=result;
+    });
   }
 
 }
