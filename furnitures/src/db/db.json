@@ -4,67 +4,117 @@
             "id":1,
             "workerName": "David", 
             "workerPassword": "123",
-            "workerPhone":"123"
+            "workerPhone":"054555123"
         },
         {
             "id":2,
             "workerName": "Hodaya", 
             "workerPassword": "456",
-            "workerPhone":"456"
+            "workerPhone":"054555456"
         },
         {
             "id":3,
             "workerName": "Dina", 
             "workerPassword": "789",
-            "workerPhone":"789"
+            "workerPhone":"054555789"
         }
     ],
     "suppliers":[
         {
             "id":1, 
             "supplierName": "Gai", 
-            "supplierPhone":"1234"
+            "supplierPhone":"054551234"
         },
         {
             "id":2, 
             "supplierName": "Ben", 
-            "supplierPhone":"3456"
+            "supplierPhone":"054553456"
         },
         {
             "id":3, 
             "supplierName": "Omer", 
-            "supplierPhone":"5678"
+            "supplierPhone":"054555678"
         }
     ],
     "furnitures":[
         {
             "id":1, 
-            "furnitureName": "maduim table for 12...", 
+            "furnitureName": "medium table for 8 diners", 
             "supplierId":2, 
             "furnitureColor":"brown", 
-            "furnitureSize":"1.5*0.4", 
-            "furnitureMaterial":"metirial", 
+            "furnitureSize":"1.5*0.5", 
+            "furnitureMaterial":"wood", 
             "furniturePrise":1000
         },
         {
             "id":2, 
-            "furnitureName": "large table for 12...", 
+            "furnitureName": "large table for 12 diners", 
             "supplierId":1, 
             "furnitureColor":"black", 
-            "furnitureSize":"1.5*0.4", 
-            "furnitureMaterial":"metirial", 
-            "furniturePrise":1000
+            "furnitureSize":"2.7*0.5", 
+            "furnitureMaterial":"plastic", 
+            "furniturePrise":1500
         },
         {
             "id":3, 
-            "furnitureName": "small table for 4...", 
+            "furnitureName": "small table for 4 diners", 
             "supplierId":3, 
             "furnitureColor":"white", 
-            "furnitureSize":"1*0.4", 
-            "furnitureMaterial":"metirial", 
+            "furnitureSize":"1*0.5", 
+            "furnitureMaterial":"metal", 
             "furniturePrise":500
         }
-    ]
-    
-    
+    ],
+    "orders":[
+        {
+            "id":1, 
+            "orderDate": "10/02/2018", 
+            "workerId":1, 
+            "supplierId":2, 
+            "orderStatus":true
+        },
+        {
+            "id":2, 
+            "orderDate": "11/02/2018", 
+            "workerId":2, 
+            "supplierId":3, 
+            "orderStatus":false
+        },
+        {
+            "id":3, 
+            "orderDate": "12/02/2018", 
+            "workerId":3, 
+            "supplierId":2, 
+            "orderStatus":true
+        },
+        {
+            "id":4, 
+            "orderDate": "13/02/2018", 
+            "workerId":2, 
+            "supplierId":1, 
+            "orderStatus":false
+        }          
+    ],
+    "order_items":[
+        {
+            "orderId":1,
+            "furnitureId":1, 
+            "numberOfItems": 10
+        },
+        {
+            "orderId":1,
+            "furnitureId":3, 
+            "numberOfItems": 5
+        },
+        {
+            "orderId":2,
+            "furnitureId":2, 
+            "numberOfItems": 1
+        },
+        {
+            "orderId":3,
+            "furnitureId":3, 
+            "numberOfItems": 32
+        }      
+    ]  
 }
