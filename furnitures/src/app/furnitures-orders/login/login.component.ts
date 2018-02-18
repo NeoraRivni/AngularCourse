@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin(){
-    debugger;
     this.workerService.checkIfWorkerExists(this.currentWorker.name,this.currentWorker.password).then(result=>{
       this.message=result;
     });

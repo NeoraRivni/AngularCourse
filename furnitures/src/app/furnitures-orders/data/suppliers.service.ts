@@ -12,7 +12,7 @@ export class SupplierService {
 
     }
 
-    // מה הפונקציה מקבלת? שם או קוד?
+
     
 
     async getAllSuppliers():Promise<Supplier[]>{
