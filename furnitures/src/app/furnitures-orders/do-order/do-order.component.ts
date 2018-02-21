@@ -5,6 +5,7 @@ import { OrderService } from '../data/order.service';
 import { Supplier } from '../model/suppliers';
 import { FurnituresService } from '../data/furnitures.service';
 import { Furniture } from '../model/furnitures';
+import { FurnitureViewModel } from './furniture.view-model';
 
 @Component({
   selector: 'do-order',
@@ -15,7 +16,7 @@ export class DoOrderComponent implements OnInit {
 
   private currentOrder:OrderViewModel = new OrderViewModel();
   private suppliers:Supplier[] = new Array<Supplier>();
-  private furnitures:Furniture[] = new Array<Furniture>();
+  private furnitures:FurnitureViewModel[] = new Array<FurnitureViewModel>();
   constructor(private suppliersService:SupplierService,private furnituresService:FurnituresService,
     private orderService:OrderService) { }
 

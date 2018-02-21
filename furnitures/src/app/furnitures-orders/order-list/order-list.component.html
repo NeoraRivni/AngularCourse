@@ -1,2 +1,4 @@
-// צירוף קומפוננט פנימי של הצגת הזמנה
+<div>
+        <order *ngFor="let or of order-list" [order]="or" (click)="selectOrder(or)"></book>
+</div>
 
