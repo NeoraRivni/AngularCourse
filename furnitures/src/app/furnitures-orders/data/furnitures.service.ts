@@ -11,8 +11,21 @@ export class FurnituresService {
 
     async getFurnitureForSupplier(supplierId:number): Promise<FurnitureViewModel[]>{
         let furnituresUrl = this.baseUrl+"/furnitures?supplierId="+supplierId;
-        let furnituresFromDB = await this.httpClient.get<FurnitureViewModel[]>(furnituresUrl).toPromise();
-        return furnituresFromDB;
+        let furnituresFromDB = await this.httpClient.get<Furniture[]>(furnituresUrl).toPromise();
+        let result: FurnitureViewModel[] = new Array <FurnitureViewModel>();
+        for (let f of furnituresFromDB)
+        {
+            let furnitureVM:FurnitureViewModel = new FurnitureViewModel();
+            furnitureVM.id = f.id;
+            furnitureVM.furnitureName = f.furnitureName;
+            furnitureVM.furnitureColor = f.furnitureColor;
+            furnitureVM.furnitureMaterial = f.furnitureMaterial;
+            furnitureVM.furniturePrise = f.furniturePrise;
+            furnitureVM.furnitureSize = f.furnitureSize;
+
+            result.push(furnitureVM);
+        }
+        return result;
      }
 
 }

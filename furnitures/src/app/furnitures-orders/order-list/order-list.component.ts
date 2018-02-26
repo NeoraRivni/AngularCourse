@@ -1,25 +1,26 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OrderViewModel } from '../do-order/order.view-model';
+import { OrderService } from '../data/order.service';
+import { FurnitureViewModel } from '../do-order/furniture.view-model';
 
 @Component({
-  selector: 'app-order-list',
+  selector: 'order-list',
   templateUrl: './order-list.component.html',
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  @Input() private order_list: OrderViewModel[];
+  
+  @Input() private currentFurnitures:FurnitureViewModel[];
   
   @Output() private recordSelected: EventEmitter<OrderViewModel> = new EventEmitter<OrderViewModel>();
       
-  constructor() { }
+  constructor(private orderService:OrderService) {}
+  private currentOrder: OrderViewModel;
 
   ngOnInit() {
   }
 
-  selectOrder(selectOrder:OrderViewModel) {
-    
-        debugger;
-  
-        this.recordSelected.emit(selectOrder);    
-      }
+ performOrder(){
+  this.orderService.doOrder(this.currentOrder,this.currentFurnitures);
+ }
 }

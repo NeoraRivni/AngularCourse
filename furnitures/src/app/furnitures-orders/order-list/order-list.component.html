@@ -1,4 +1,5 @@
 <div>
-        <order *ngFor="let or of order-list" [order]="or" (click)="selectOrder(or)"></book>
+        <order-item *ngFor="let or of order-list"></order-item>
+        <button type="button" (click)="performOrder()">perform</button>
 </div>
 
