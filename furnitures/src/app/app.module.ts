@@ -11,6 +11,9 @@ import { SupplierService } from './furnitures-orders/data/suppliers.service';
 import { OrderService } from './furnitures-orders/data/order.service';
 import { DoOrderComponent } from './furnitures-orders/do-order/do-order.component';
 import { FurnituresService } from './furnitures-orders/data/furnitures.service';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { FurnituresService } from './furnitures-orders/data/furnitures.service';
   imports: [
     BrowserModule,
     FurnituresOrderModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [WorkersService,SupplierService,OrderService,FurnituresService],
   bootstrap: [AppComponent]

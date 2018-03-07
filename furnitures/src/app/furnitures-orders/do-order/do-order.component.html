@@ -1,8 +1,3 @@
-
-<div>
-    please select worker id:
-    <input type=number [(ngModel)]="currentOrder.workerId"/>
-</div>
 <div>
     please select supplier name:
       <select [(ngModel)]="currentOrder.supplierId">
@@ -13,4 +8,7 @@
     <button type="button" (click)="searchForFurnitures()">Search</button>
 </div>
 
-<div *ngFor="let f of furnitures" >{{f.furnitureName || f.furnitureMaterial}}</div>
+<!-- <div *ngFor="let f of furnitures" >{{f.furnitureName  f.furnitureMaterial}}</div> -->
+<div [hidden]="hideList">
+<order-list [currentFurnitures]=furnitures (passOrderItems)="doOrder($event)"></order-list>
+</div>

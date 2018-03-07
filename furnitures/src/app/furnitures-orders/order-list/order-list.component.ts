@@ -12,15 +12,17 @@ export class OrderListComponent implements OnInit {
   
   @Input() private currentFurnitures:FurnitureViewModel[];
   
-  @Output() private recordSelected: EventEmitter<OrderViewModel> = new EventEmitter<OrderViewModel>();
+  @Output() private passOrderItems: EventEmitter<FurnitureViewModel[]> = new EventEmitter<FurnitureViewModel[]>();
       
   constructor(private orderService:OrderService) {}
-  private currentOrder: OrderViewModel;
+  //private currentOrder: OrderViewModel;
 
   ngOnInit() {
   }
 
  performOrder(){
-  this.orderService.doOrder(this.currentOrder,this.currentFurnitures);
+   debugger;
+   this.passOrderItems.emit(this.currentFurnitures);
+  //this.orderService.doOrder(this.currentFurnitures);
  }
 }

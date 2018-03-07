@@ -1,120 +1,160 @@
 {
-    "workers":[
-        {
-            "id":1,
-            "workerName": "David", 
-            "workerPassword": "123",
-            "workerPhone":"054555123"
-        },
-        {
-            "id":2,
-            "workerName": "Hodaya", 
-            "workerPassword": "456",
-            "workerPhone":"054555456"
-        },
-        {
-            "id":3,
-            "workerName": "Dina", 
-            "workerPassword": "789",
-            "workerPhone":"054555789"
-        }
-    ],
-    "suppliers":[
-        {
-            "id":1, 
-            "supplierName": "Gai", 
-            "supplierPhone":"054551234"
-        },
-        {
-            "id":2, 
-            "supplierName": "Ben", 
-            "supplierPhone":"054553456"
-        },
-        {
-            "id":3, 
-            "supplierName": "Omer", 
-            "supplierPhone":"054555678"
-        }
-    ],
-    "furnitures":[
-        {
-            "id":1, 
-            "furnitureName": "medium table for 8 diners", 
-            "supplierId":2, 
-            "furnitureColor":"brown", 
-            "furnitureSize":"1.5*0.5", 
-            "furnitureMaterial":"wood", 
-            "furniturePrise":1000
-        },
-        {
-            "id":2, 
-            "furnitureName": "large table for 12 diners", 
-            "supplierId":1, 
-            "furnitureColor":"black", 
-            "furnitureSize":"2.7*0.5", 
-            "furnitureMaterial":"plastic", 
-            "furniturePrise":1500
-        },
-        {
-            "id":3, 
-            "furnitureName": "small table for 4 diners", 
-            "supplierId":3, 
-            "furnitureColor":"white", 
-            "furnitureSize":"1*0.5", 
-            "furnitureMaterial":"metal", 
-            "furniturePrise":500
-        }
-    ],
-    "orders":[
-        {
-            "id":1, 
-            "orderDate": "10/02/2018", 
-            "workerId":1, 
-            "supplierId":2, 
-            "orderStatus":true
-        },
-        {
-            "id":2, 
-            "orderDate": "11/02/2018", 
-            "workerId":2, 
-            "supplierId":3, 
-            "orderStatus":false
-        },
-        {
-            "id":3, 
-            "orderDate": "12/02/2018", 
-            "workerId":3, 
-            "supplierId":2, 
-            "orderStatus":true
-        },
-        {
-            "id":4, 
-            "orderDate": "13/02/2018", 
-            "workerId":2, 
-            "supplierId":1, 
-            "orderStatus":false
-        }          
-    ],
-    "order_items":[
-        {
-            "orderId":1,
-            "furnitureId":1, 
-            "numberOfItems": 10
-        },
-        {
-            "orderId":1,
-            "furnitureId":3, 
-            "numberOfItems": 5
-        },
-        {
-            "orderId":2,
-            "furnitureId":2, 
-            "numberOfItems": 1
-        },
-        {
-            "orderId":3,
-            "furnitureId":3, 
-            "numberOfItems": 32
-        }      
-    ]  
+  "workers": [
+    {
+      "id": 1,
+      "workerName": "David",
+      "workerPassword": "123",
+      "workerPhone": "054555123"
+    },
+    {
+      "id": 2,
+      "workerName": "Hodaya",
+      "workerPassword": "456",
+      "workerPhone": "054555456"
+    },
+    {
+      "id": 3,
+      "workerName": "Dina",
+      "workerPassword": "789",
+      "workerPhone": "054555789"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "supplierName": "Gai",
+      "supplierPhone": "054551234"
+    },
+    {
+      "id": 2,
+      "supplierName": "Ben",
+      "supplierPhone": "054553456"
+    },
+    {
+      "id": 3,
+      "supplierName": "Omer",
+      "supplierPhone": "054555678"
+    }
+  ],
+  "furnitures": [
+    {
+      "id": 1,
+      "furnitureName": "small table for 4 diners",
+      "supplierId": 2,
+      "furnitureColor": "white",
+      "furnitureSize": "1*0.5",
+      "furnitureMaterial": "wood",
+      "furniturePrise": 400
+    },
+    {
+      "id": 6,
+      "furnitureName": "medium table for 8 diners",
+      "supplierId": 2,
+      "furnitureColor": "black",
+      "furnitureSize": "1.5*1.75",
+      "furnitureMaterial": "wood",
+      "furniturePrise": 550
+    },
+    {
+      "id": 5,
+      "furnitureName": "medium table for 12 diners",
+      "supplierId": 2,
+      "furnitureColor": "brown",
+      "furnitureSize": "1.5*0.5",
+      "furnitureMaterial": "wood",
+      "furniturePrise": 700
+    },
+    {
+      "id": 4,
+      "furnitureName": "large table for 8 diners",
+      "supplierId": 2,
+      "furnitureColor": "brown",
+      "furnitureSize": "1.5*0.5",
+      "furnitureMaterial": "wood",
+      "furniturePrise": 1000
+    },
+    {
+      "id": 2,
+      "furnitureName": "large table for 12 diners",
+      "supplierId": 1,
+      "furnitureColor": "black",
+      "furnitureSize": "2.7*0.5",
+      "furnitureMaterial": "plastic",
+      "furniturePrise": 1500
+    },
+    {
+      "id": 3,
+      "furnitureName": "small table for 4 diners",
+      "supplierId": 3,
+      "furnitureColor": "white",
+      "furnitureSize": "1*0.5",
+      "furnitureMaterial": "metal",
+      "furniturePrise": 500
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "orderDate": "10/02/2018",
+      "workerId": 1,
+      "supplierId": 2,
+      "orderStatus": true
+    },
+    {
+      "id": 2,
+      "orderDate": "11/02/2018",
+      "workerId": 2,
+      "supplierId": 3,
+      "orderStatus": false
+    },
+    {
+      "id": 3,
+      "orderDate": "12/02/2018",
+      "workerId": 3,
+      "supplierId": 2,
+      "orderStatus": true
+    },
+    {
+      "id": 4,
+      "orderDate": "13/02/2018",
+      "workerId": 2,
+      "supplierId": 1,
+      "orderStatus": false
+    },
+    {
+      "orderDate": "2018-03-07T19:19:25.780Z",
+      "workerId": 2,
+      "supplierId": "2",
+      "id": 5
+    },
+    {
+      "orderDate": "2018-03-07T19:41:12.324Z",
+      "workerId": 1,
+      "supplierId": "2",
+      "orderStatus": false,
+      "id": 6
+    }
+  ],
+  "order_items": [
+    {
+      "orderId": 1,
+      "furnitureId": 1,
+      "numberOfItems": 10
+    },
+    {
+      "orderId": 1,
+      "furnitureId": 3,
+      "numberOfItems": 5
+    },
+    {
+      "orderId": 2,
+      "furnitureId": 2,
+      "numberOfItems": 1
+    },
+    {
+      "orderId": 3,
+      "furnitureId": 3,
+      "numberOfItems": 32
+    }
+  ]
 }

@@ -1,6 +1,8 @@
 
-  <div>name:{{item.furnitureName}}</div>
-  <div>color: {{item.furnitureColor}}</div>
-  <div>size:{{item.furnitureSize}}</div>
-  <div>material:{{item.furnitureMaterial}}</div>
-  <div> <input type="number" [(ngModel)]="item.amount"/></div>
+  <div class="col-sm-2">
+    {{item.furnitureName}}
+  </div>
+  <div class="col-sm-2">{{item.furnitureColor}}</div>
+  <div class="col-sm-2">{{item.furnitureSize}}</div>
+  <div class="col-sm-2">{{item.furnitureMaterial}}</div>
+  <div class="col-sm-2"> <input type="number" [(ngModel)]="item.amount"/></div>

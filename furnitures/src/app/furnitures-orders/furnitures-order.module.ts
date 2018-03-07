@@ -14,6 +14,6 @@ import { OrderComponent } from './order/order.component';
     FormsModule
   ],
   declarations: [LoginComponent, DoOrderComponent, OrderListComponent, OrderNotProvidComponent, OrderItemComponent, OrderComponent],
-  exports:[LoginComponent, DoOrderComponent]
+  exports:[LoginComponent, DoOrderComponent,OrderItemComponent,OrderListComponent,OrderComponent,OrderNotProvidComponent]
 })
 export class FurnituresOrderModule { }

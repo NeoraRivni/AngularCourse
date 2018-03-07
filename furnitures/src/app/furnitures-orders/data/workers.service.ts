@@ -10,14 +10,14 @@ export class WorkersService {
         
     }
     
-    async checkIfWorkerExists(workerName:string,workerPass:string):Promise<string>{
+    async checkIfWorkerExists(workerName:string,workerPass:string):Promise<number>{
         let workersUrl = this.baseUrl+"/workers?workerName="+workerName+"&workerPassword="+workerPass;
         let workerFromDB = await this.httpClient.get<Worker[]>(workersUrl).toPromise();
         if(workerFromDB.length>0){
-            return "Welcome!";
+            return workerFromDB[0].id;
         }
         else{
-            return "Sorry, there is no such a worker in the sustem";
+            return 0;
         }
     }
 }

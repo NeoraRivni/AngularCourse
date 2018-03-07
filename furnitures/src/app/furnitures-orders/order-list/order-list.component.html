@@ -1,5 +1,14 @@
 <div>
-        <order-item *ngFor="let or of order-list"></order-item>
-        <button type="button" (click)="performOrder()">perform</button>
+  <div>
+        <div class="col-sm-2"> name:</div>
+        <div class="col-sm-2"> color</div>
+        <div class="col-sm-2"> size</div>
+        <div class="col-sm-2"> material</div>
+        <div class="col-sm-2"> amount</div>
+</div>
+<div>
+   <item *ngFor="let or of currentFurnitures" [item]="or"></item>
+</div>
+    <button type="button" (click)="performOrder()">perform</button>
 </div>
 
