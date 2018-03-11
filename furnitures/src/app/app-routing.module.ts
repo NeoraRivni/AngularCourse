@@ -3,6 +3,7 @@ import { Route, RouterModule, Router,Routes } from "@angular/router";
 import { LoginComponent } from "./furnitures-orders/login/login.component";
 import { DoOrderComponent } from "./furnitures-orders/do-order/do-order.component";
 const route:Routes=[
+    
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
     {path: 'doOrder/:id', component: DoOrderComponent},

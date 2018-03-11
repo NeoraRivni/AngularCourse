@@ -8,7 +8,9 @@ import { FurnitureViewModel } from '../do-order/furniture.view-model';
   styleUrls: ['./order-item.component.css']
 })
 export class OrderItemComponent implements OnInit {
+
 @Input() private item:FurnitureViewModel;
+
   constructor() { }
 
   ngOnInit() {

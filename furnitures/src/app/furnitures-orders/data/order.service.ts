@@ -55,17 +55,17 @@ export class OrderService {
     
     async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<void>{
         debugger;
+        let idOfOrder:number;//
         let currentOrder = new Order( new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
         await this.httpClient.post(this.baseUrl + '/orders', currentOrder).toPromise();
-        
-        let orderURL = this.baseUrl+'/orders?workerId='+currentOrder.workerId+'&orderDate='+currentOrder.orderDate;
-        let orderFromDB =  await this.httpClient.get<OrderDB[]>(orderURL);
-        
+
+        let cd= await this.httpClient.get(this.baseUrl + '/orders?orderDate'+currentOrder.orderDate).toPromise();
+        idOfOrder=cd[0].id;
         let currentOrderItem : OrderItems;
 
         for (let item of currentFurnituresVM) {
             if(item.amount && item.amount>0){
-            currentOrderItem = new OrderItems(orderFromDB[0].id,item.id ,item.amount);
+            currentOrderItem = new OrderItems(idOfOrder,item.id ,item.amount);
             await this.httpClient.post(this.baseUrl + '/order_items', currentOrderItem).toPromise();
             }
         }

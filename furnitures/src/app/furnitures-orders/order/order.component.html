@@ -1,5 +1,12 @@
-<div>id:{{item.id}}</div>
-<div>orderDate: {{item.orderDate}}</div>
-<div>orderStatus:{{item.orderStatus}}</div>
 
+<table bordercolor="blue" width="50%">
+        <tr>
+    <td>{{item.id}}</td> 
+    <!-- <td> <div [value]=getName()></div></td> -->
+    <td>{{item.orderDate}}</td> 
+    <td>{{item.orderStatus}}</td>
+    <td><button type="button" (click)="OrderConfirmation()">OK</button></td>        
+    <td><button type="button" (click)="DeleteOrder()">Cancel</button></td>
+        </tr>
+    </table>
 להוסיף שם ספק

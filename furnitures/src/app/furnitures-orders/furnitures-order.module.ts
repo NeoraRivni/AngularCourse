@@ -7,13 +7,14 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { OrderNotProvidComponent } from './order-not-provid/order-not-provid.component';
 import { OrderItemComponent } from './order-item/order-item.component';
 import { OrderComponent } from './order/order.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [LoginComponent, DoOrderComponent, OrderListComponent, OrderNotProvidComponent, OrderItemComponent, OrderComponent],
+  declarations: [LoginComponent, DoOrderComponent, OrderListComponent, OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent],
   exports:[LoginComponent, DoOrderComponent,OrderItemComponent,OrderListComponent,OrderComponent,OrderNotProvidComponent]
 })
 export class FurnituresOrderModule { }

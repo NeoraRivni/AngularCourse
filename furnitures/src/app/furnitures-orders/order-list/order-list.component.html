@@ -1,11 +1,13 @@
 <div>
-  <div>
-        <div class="col-sm-2"> name:</div>
-        <div class="col-sm-2"> color</div>
-        <div class="col-sm-2"> size</div>
-        <div class="col-sm-2"> material</div>
-        <div class="col-sm-2"> amount</div>
-</div>
+        <table bordercolor="blue" width="50%">
+            <tr>
+        <td> name</td>
+        <td> color</td>
+        <td> size</td>
+        <td> material</td>
+        <td> amount</td>
+           </tr>
+    </table>
 <div>
    <item *ngFor="let or of currentFurnitures" [item]="or"></item>
 </div>
