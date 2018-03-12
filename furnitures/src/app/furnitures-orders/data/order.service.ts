@@ -5,9 +5,11 @@ import { OrderViewModel } from "../do-order/order.view-model";
 import { FurnitureViewModel } from "../do-order/furniture.view-model";
 import { OrderItems } from "../model/order_items";
 import { OrderDB } from "../../../db/orderDB";
+import { OrderNViewModel } from "../order/orderN.view-model";
 
 @Injectable()
 export class OrderService {
+    SupplierService: any;
   
     baseUrl: string="http://localhost:3000";
     
@@ -17,10 +19,23 @@ export class OrderService {
 
         
     
-    async ListAllOrders():Promise< Order[]>{
+    async ListAllOrders():Promise< OrderNViewModel[]>{
         let ordersUrl = this.baseUrl+"/orders";
         let ordersFromDB = await this.httpClient.get<Order[]>(ordersUrl).toPromise();
-        return ordersFromDB;
+        let vmOrdersREsult:OrderNViewModel[] = new Array<OrderNViewModel>();
+
+        for(let item of ordersFromDB){
+            let vmOrderN:OrderNViewModel = new OrderNViewModel();
+            //vmOrderN.id= i
+            vmOrderN.orderStatus=item.orderStatus;
+            vmOrderN.supplierId=item.supplierId;
+            vmOrderN.supplierName=this.SupplierService.getName(item.supplierId);
+            vmOrderN.workerId=item.workerId;
+            vmOrdersREsult.push(vmOrderN);
+        }
+        return vmOrdersREsult; 
+        
+   
     }
 
 //איך לוקחים רק את ההזמנות שהסטטוס שלהם שקר
@@ -56,16 +71,20 @@ export class OrderService {
     async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<void>{
         debugger;
         let idOfOrder:number;//
-        let currentOrder = new Order( new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
-        await this.httpClient.post(this.baseUrl + '/orders', currentOrder).toPromise();
+        let ooo:Object;
+        let currentOrder = new Order(new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
+        
+        await this.httpClient.post<Order>(this.baseUrl + '/orders', currentOrder).toPromise().then(result=>{
+            ooo = result;
+            });
 
-        let cd= await this.httpClient.get(this.baseUrl + '/orders?orderDate'+currentOrder.orderDate).toPromise();
-        idOfOrder=cd[0].id;
+        // let cd= await this.httpClient.get(this.baseUrl + '/orders?orderDate'+currentOrder.orderDate).toPromise();
+        // idOfOrder=cd[0].id;
         let currentOrderItem : OrderItems;
 
         for (let item of currentFurnituresVM) {
             if(item.amount && item.amount>0){
-            currentOrderItem = new OrderItems(idOfOrder,item.id ,item.amount);
+            currentOrderItem = new OrderItems(1,item.id ,item.amount);
             await this.httpClient.post(this.baseUrl + '/order_items', currentOrderItem).toPromise();
             }
         }

@@ -1,12 +1,14 @@
 
 <table bordercolor="blue" width="50%">
         <tr>
-    <td>{{item.id}}</td> 
+    <td>{{order.id}}</td> 
     <!-- <td> <div [value]=getName()></div></td> -->
-    <td>{{item.orderDate}}</td> 
-    <td>{{item.orderStatus}}</td>
-    <td><button type="button" (click)="OrderConfirmation()">OK</button></td>        
-    <td><button type="button" (click)="DeleteOrder()">Cancel</button></td>
+    <td>{{order.orderDate}}</td>
+    <td>{{order.supplierName}}</td>
+   
+    <td>{{order.orderStatus}}</td>
+    <!-- <td><button type="button" (click)="OrderConfirmation()">OK</button></td>        
+    <td><button type="button" (click)="DeleteOrder()">Cancel</button></td> -->
         </tr>
     </table>
 להוסיף שם ספק

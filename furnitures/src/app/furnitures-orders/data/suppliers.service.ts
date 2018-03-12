@@ -10,7 +10,7 @@ export class SupplierService {
     baseUrl: string="http://localhost:3000";
 
     constructor(private httpClient:HttpClient){
-
+        this.getAllSuppliers();
     }
 
     async getName(id: number):Promise<string>{
