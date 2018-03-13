@@ -44,7 +44,7 @@ export class DoOrderComponent implements OnInit {
   doOrder(orderItemsLIst:FurnitureViewModel[]){
     debugger;
       this.orderService.doOrder(this.currentOrder,orderItemsLIst).then(result=>{
-        this.message="You'r order was preformed successfully!";
+      this.message="You'r order was preformed successfully!";
       });
 }
 

@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.workerService.checkIfWorkerExists(this.currentWorker.name,this.currentWorker.password).then(result=>{
       if(result)
        if(result>0){
-        this.router.navigate(['doOrder',result]);
+        this.router.navigate(['home-page',result]);
       }else{
         this.message="Sorry, there is no such a worker in the sustem"
       }
