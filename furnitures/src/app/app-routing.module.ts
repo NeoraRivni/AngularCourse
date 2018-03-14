@@ -4,13 +4,13 @@ import { LoginComponent } from "./furnitures-orders/login/login.component";
 import { DoOrderComponent } from "./furnitures-orders/do-order/do-order.component";
 import { HomePageComponent } from "./furnitures-orders/home-page/home-page.component";
 import { OrderNotProvidComponent } from "./furnitures-orders/order-not-provid/order-not-provid.component";
-const route:Routes=[
+const routes:Routes=[
     
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
    // {path: 'doOrder/:id', component: DoOrderComponent},
     {path: 'home-page/:id', component: HomePageComponent, children: [
-         {path: 'doOrder/:id', component: DoOrderComponent},
+         {path: 'do-order/:id', component: DoOrderComponent},
          {path: 'order-not-provid', component: OrderNotProvidComponent}
     //     {path: 'bookStatus', component: BookStatusComponent},
     //     {path: 'lendings', component: LendingsComponent},
@@ -20,7 +20,7 @@ const route:Routes=[
  ];
 
 @NgModule({
-    imports:[RouterModule.forRoot(route)],
+    imports:[RouterModule.forRoot(routes)],
     exports:[RouterModule]
 })
 export class AppRoutingModule{}

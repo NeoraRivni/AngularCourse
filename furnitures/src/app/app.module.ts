@@ -13,6 +13,8 @@ import { DoOrderComponent } from './furnitures-orders/do-order/do-order.componen
 import { FurnituresService } from './furnitures-orders/data/furnitures.service';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { OrderNotProvidComponent } from './furnitures-orders/order-not-provid/order-not-provid.component';
+import { HomePageComponent } from './furnitures-orders/home-page/home-page.component';
 
 
 

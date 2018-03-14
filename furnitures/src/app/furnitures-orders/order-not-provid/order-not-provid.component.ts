@@ -6,8 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './order-not-provid.component.html',
   styleUrls: ['./order-not-provid.component.css']
 })
-export class OrderNotProvidComponent implements OnInit {
-
+export class OrderNotProvidComponent implements OnInit {  
   constructor( ) { }
 
   ngOnInit() {

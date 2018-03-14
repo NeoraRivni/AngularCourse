@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { OrderViewModel } from '../do-order/order.view-model';
 import { SupplierService } from '../data/suppliers.service';
 import { OrderNViewModel } from './orderN.view-model';
+import { OrderService } from '../data/order.service';
 
 
 @Component({
@@ -11,16 +12,24 @@ import { OrderNViewModel } from './orderN.view-model';
 })
 export class OrderComponent implements OnInit {
   @Input() private order: OrderNViewModel;
-   private Sname : string;
-  constructor(private suppliersService:SupplierService) { 
+  @Input() private orderStatus:boolean;
+  
+  constructor(private suppliersService:SupplierService, private orderService:OrderService) { 
     }
- 
-//  getName()
-//  {
-//     let Sname=this.suppliersService.getName(this.order.supplierId);
-//     return Sname;
-//  }
-  ngOnInit() {
+ message:string;
+  
+ ngOnInit() {
   }
+
+  OrderConfirmation(){
+    this.orderService.OrderConfirmation(this.order.id).then(result=>{
+      this.message="You'r order was ok successfully!";
+  })
+ }
+ DeleteOrder(){
+     this.orderService.DeleteOrder(this.order.id).then(result=>{
+       this.message="You'r order was delete successfully!";
+     })
+ }
 
 }

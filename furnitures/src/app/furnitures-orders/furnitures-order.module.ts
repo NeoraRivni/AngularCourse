@@ -9,13 +9,16 @@ import { OrderItemComponent } from './order-item/order-item.component';
 import { OrderComponent } from './order/order.component';
 import { OrdersComponent } from './orders/orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  declarations: [LoginComponent, DoOrderComponent, OrderListComponent, OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent, HomePageComponent],
+  declarations: [LoginComponent, DoOrderComponent, OrderListComponent, 
+    OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent, HomePageComponent],
   exports:[LoginComponent, DoOrderComponent,OrderItemComponent,OrderListComponent,OrderComponent,OrderNotProvidComponent]
 })
 export class FurnituresOrderModule { }

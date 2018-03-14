@@ -7,7 +7,7 @@
     <td>{{order.supplierName}}</td>
    
     <td>{{order.orderStatus}}</td>
-    <!-- <td><button type="button" (click)="OrderConfirmation()">OK</button></td>        
-    <td><button type="button" (click)="DeleteOrder()">Cancel</button></td> -->
+     <td><button type="button" [hidden]="orderStatus"  (click)="OrderConfirmation()">OK</button></td>        
+    <td><button type="button" [hidden]="orderStatus" (click)="DeleteOrder()">Cancel</button></td> 
         </tr>
     </table>

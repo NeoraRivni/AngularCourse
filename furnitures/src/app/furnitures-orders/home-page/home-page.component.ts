@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'home-page',
@@ -8,9 +8,15 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private route:ActivatedRoute) {
+     }
+  idWorker: number;
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params=>{
+      this.idWorker=+params.get('id');
+      //this.router.navigate(['do-order',this.idWorker]);
+    })
   }
-
+    //  
 }

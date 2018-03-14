@@ -29,12 +29,12 @@ export class DoOrderComponent implements OnInit {
     this.suppliersService.getAllSuppliers().then(result=>{
     this.suppliers = result;
     });
-    debugger;
+    
     this.route.paramMap.subscribe(params=>{
-      this.currentOrder.workerId=+params.get('id');
+    this.currentOrder.workerId=+params.get('id');
     })
   }
-  searchForFurnitures(){
+  searchForFurnitures() {
     debugger;
     this.furnituresService.getFurnitureForSupplier(this.currentOrder.supplierId).then(result=>{
       this.furnitures=result;

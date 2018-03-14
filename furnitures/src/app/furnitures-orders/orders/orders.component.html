@@ -6,6 +6,9 @@
     <td> date</td>
     <td> status</td>
        </tr>
+       <tr>
+       <order *ngFor="let or of orders" [order]="or" (click)="selectOrder(or)"></order>
+       </tr>
 </table>
 
 <div>
