@@ -12,8 +12,8 @@ import { OrderService } from '../data/order.service';
 })
 export class OrderComponent implements OnInit {
   @Input() private order: OrderNViewModel;
-  @Input() private orderStatus:boolean;
-  
+  @Input()  private hideButtons : boolean;
+
   constructor(private suppliersService:SupplierService, private orderService:OrderService) { 
     }
  message:string;

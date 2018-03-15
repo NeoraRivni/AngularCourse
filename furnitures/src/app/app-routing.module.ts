@@ -12,11 +12,7 @@ const routes:Routes=[
     {path: 'home-page/:id', component: HomePageComponent, children: [
          {path: 'do-order/:id', component: DoOrderComponent},
          {path: 'order-not-provid', component: OrderNotProvidComponent}
-    //     {path: 'bookStatus', component: BookStatusComponent},
-    //     {path: 'lendings', component: LendingsComponent},
-    //     {path: 'returnings', component: ReturningsComponent},
-    //     {path: 'readersManagment', component: RedearsManagmentComponent}
-     ]},
+     ]}
  ];
 
 @NgModule({

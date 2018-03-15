@@ -7,8 +7,11 @@
     <td> status</td>
        </tr>
        <tr>
-       <order *ngFor="let or of orders" [order]="or" (click)="selectOrder(or)"></order>
-       </tr>
+       <order *ngFor="let or of orders" [order]="or" ></order>
+       <!-- <order *ngFor="let or of orders" [order]="or" (click)="selectOrder(or)"></order> -->
+       <!-- <order *ngFor="let or of ordersList" [order]="or" (approveOrder)="passApproveOrder($event)" (cancleOrder)="passCancleOrder ($event)"> </order>/> -->
+    </tr>
 </table>
+
 
 <div>

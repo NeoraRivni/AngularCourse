@@ -29,7 +29,6 @@ export class DoOrderComponent implements OnInit {
     this.suppliersService.getAllSuppliers().then(result=>{
     this.suppliers = result;
     });
-    
     this.route.paramMap.subscribe(params=>{
     this.currentOrder.workerId=+params.get('id');
     })

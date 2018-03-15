@@ -12,8 +12,10 @@ export class WorkersService {
     
     async checkIfWorkerExists(workerName:string,workerPass:string):Promise<number>{
         let workersUrl = this.baseUrl+"/workers?workerName="+workerName+"&workerPassword="+workerPass;
+      debugger;
         let workerFromDB = await this.httpClient.get<Worker[]>(workersUrl).toPromise();
-        if(workerFromDB.length>0){
+        debugger;
+         if(workerFromDB.length>0){
             return workerFromDB[0].id;
         }
         else{

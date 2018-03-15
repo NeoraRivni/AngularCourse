@@ -1,3 +1,15 @@
 <div>
-    <orders (recordSelected)="getSelectedBookEvent($event)" [orderStatus]="false"></orders>
+                <table bordercolor="blue" width="50%">
+                    <tr>
+                <td> order number</td>
+                <td> supplier name</td>
+                <td> date</td>
+                <td> status</td>
+                   </tr>
+                   <tr>
+                   <order *ngFor="let or of ordersList" [order]="or" ></order>
+                </tr>
+            </table>
+<order  [hideButtons]="true"></order>
+
 </div>

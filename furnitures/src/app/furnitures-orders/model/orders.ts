@@ -1,6 +1,6 @@
 export class Order {
-    constructor(  readonly orderDate: Date, 
+    constructor(readonly orderDate: Date, 
         readonly workerId:number, readonly supplierId:number, 
         readonly orderStatus:boolean){}
-    id:number;
+      id:number;
 }

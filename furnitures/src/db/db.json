@@ -93,200 +93,41 @@
     }
   ],
   "orders": [
-    {
-      "id": 1,
-      "orderDate": "10/02/2018",
-      "workerId": 1,
-      "supplierId": 2,
-      "orderStatus": true
-    },
-    {
-      "id": 2,
-      "orderDate": "11/02/2018",
-      "workerId": 2,
-      "supplierId": 3,
-      "orderStatus": false
-    },
-    {
-      "id": 3,
-      "orderDate": "12/02/2018",
-      "workerId": 3,
-      "supplierId": 2,
-      "orderStatus": true
-    },
-    {
-      "id": 4,
-      "orderDate": "13/02/2018",
-      "workerId": 2,
-      "supplierId": 1,
-      "orderStatus": false
-    },
-    {
-      "orderDate": "2018-03-07T19:19:25.780Z",
-      "workerId": 2,
-      "supplierId": "2",
-      "id": 5
-    },
+
     {
       "orderDate": "2018-03-07T19:41:12.324Z",
       "workerId": 1,
-      "supplierId": "2",
+      "supplierId": 3,
       "orderStatus": false,
-      "id": 6
+      "id":1
     },
     {
       "orderDate": "2018-03-11T10:28:46.899Z",
       "workerId": 1,
-      "supplierId": "2",
+      "supplierId": 2,
       "orderStatus": false,
-      "id": 7
+      "id": 2
     },
     {
       "orderDate": "2018-03-11T10:43:31.626Z",
       "workerId": 1,
-      "supplierId": "1",
+      "supplierId": 1,
       "orderStatus": false,
-      "id": 8
+      "id": 3
     },
     {
       "orderDate": "2018-03-11T10:47:42.506Z",
       "workerId": 1,
-      "supplierId": "1",
+      "supplierId": 1,
       "orderStatus": false,
-      "id": 9
+      "id":4 
     },
     {
       "orderDate": "2018-03-12T12:41:12.961Z",
       "workerId": 1,
-      "supplierId": "2",
+      "supplierId": 2,
       "orderStatus": false,
-      "id": 10
-    },
-    {
-      "orderDate": "2018-03-12T12:42:56.754Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 11
-    },
-    {
-      "orderDate": "2018-03-12T12:53:07.562Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 12
-    },
-    {
-      "orderDate": "2018-03-12T12:57:08.560Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 13
-    },
-    {
-      "orderDate": "2018-03-13T15:36:43.264Z",
-      "workerId": 1,
-      "supplierId": "2",
-      "orderStatus": false,
-      "id": 14
-    },
-    {
-      "orderDate": "2018-03-13T15:40:10.406Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 15
-    },
-    {
-      "orderDate": "2018-03-13T15:45:59.439Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 16
-    },
-    {
-      "orderDate": "2018-03-13T15:47:23.016Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 17
-    },
-    {
-      "orderDate": "2018-03-13T15:51:22.584Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 18
-    },
-    {
-      "orderDate": "2018-03-13T15:52:08.071Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 19
-    },
-    {
-      "orderDate": "2018-03-13T15:59:13.241Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 20
-    },
-    {
-      "orderDate": "2018-03-13T16:05:02.845Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 21
-    },
-    {
-      "orderDate": "2018-03-13T16:09:24.488Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 22
-    },
-    {
-      "orderDate": "2018-03-13T16:11:31.740Z",
-      "workerId": 1,
-      "supplierId": "2",
-      "orderStatus": false,
-      "id": 23
-    },
-    {
-      "orderDate": "2018-03-13T16:12:17.216Z",
-      "workerId": 1,
-      "supplierId": "2",
-      "orderStatus": false,
-      "id": 24
-    },
-    {
-      "orderDate": "2018-03-13T16:18:04.821Z",
-      "workerId": 1,
-      "supplierId": "2",
-      "orderStatus": false,
-      "id": 25
-    },
-    {
-      "orderDate": "2018-03-13T16:20:38.420Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 26
-    },
-    {
-      "orderDate": "2018-03-13T16:21:54.222Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 27
-    },
-    {
-      "orderDate": "2018-03-13T16:22:12.617Z",
-      "workerId": 1,
-      "supplierId": "1",
-      "orderStatus": false,
-      "id": 28
+      "id": 5
     }
   ],
   "order_items": [
@@ -313,42 +154,6 @@
       "orderId": 3,
       "furnitureId": 3,
       "numberOfItems": 32
-    },
-    {
-      "orderId": 25,
-      "furnitureId": 1,
-      "numberOfItems": 22,
-      "id": 5
-    },
-    {
-      "orderId": 25,
-      "furnitureId": 6,
-      "numberOfItems": 11,
-      "id": 6
-    },
-    {
-      "orderId": 25,
-      "furnitureId": 4,
-      "numberOfItems": 4,
-      "id": 7
-    },
-    {
-      "orderId": 26,
-      "furnitureId": 2,
-      "numberOfItems": 7,
-      "id": 8
-    },
-    {
-      "orderId": 27,
-      "furnitureId": 2,
-      "numberOfItems": 1,
-      "id": 9
-    },
-    {
-      "orderId": 28,
-      "furnitureId": 2,
-      "numberOfItems": 1,
-      "id": 10
     }
   ]
 }

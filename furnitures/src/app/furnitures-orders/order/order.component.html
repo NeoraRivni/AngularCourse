@@ -1,13 +1,11 @@
 
 <table bordercolor="blue" width="50%">
         <tr>
-    <td>{{order.id}}</td> 
-    <!-- <td> <div [value]=getName()></div></td> -->
-    <td>{{order.orderDate}}</td>
+    <!-- <td>{{order.id}}</td>  -->
     <td>{{order.supplierName}}</td>
-   
     <td>{{order.orderStatus}}</td>
-     <td><button type="button" [hidden]="orderStatus"  (click)="OrderConfirmation()">OK</button></td>        
-    <td><button type="button" [hidden]="orderStatus" (click)="DeleteOrder()">Cancel</button></td> 
+    <td><button type="button" [hidden]= "hideButtons"  (click)="OrderConfirmation()">OK</button></td>        
+    <td><button type="button" [hidden]="hideButtons" (click)="DeleteOrder()">Cancel</button></td> 
         </tr>
     </table>
+  

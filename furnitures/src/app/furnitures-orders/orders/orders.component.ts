@@ -2,23 +2,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OrderNViewModel } from '../order/orderN.view-model';
 
 @Component({
-  selector: 'app-orders',
+  selector: 'orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
   @Input() private orders: OrderNViewModel[];
-  
-  @Output() private recordSelected: EventEmitter<OrderNViewModel> = new EventEmitter<OrderNViewModel>();
+  @Input()  private hideButtons : boolean;
+  // @Output() private hh : boolean=this.hideButtons;
+  // @Output() private recordSelected: EventEmitter<OrderNViewModel> = new EventEmitter<OrderNViewModel>();
   
 
   constructor() { }
 
   ngOnInit() {
   }
-  selectOrder(selectOrder:OrderNViewModel) {
+  // selectOrder(selectOrder:OrderNViewModel) {
     
-        this.recordSelected.emit(selectOrder);    
-      }
+  //       this.recordSelected.emit(selectOrder);    
+  //     }
 
 }

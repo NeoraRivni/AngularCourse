@@ -14,9 +14,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params=>{
-      this.idWorker=+params.get('id');
-      //this.router.navigate(['do-order',this.idWorker]);
-    })
+      this.idWorker=+params.get('id'); });
+      this.router.navigate(['do-order',this.idWorker]);
   }
-    //  
+    
 }
