@@ -1,11 +1,14 @@
 
 <table bordercolor="blue" width="50%">
         <tr>
-    <!-- <td>{{order.id}}</td>  -->
+        
+    <td>{{order.id}}</td>
+    <td>{{order.orderDate}}</td>
     <td>{{order.supplierName}}</td>
+    <td>{{order.workerName}}</td>    
     <td>{{order.orderStatus}}</td>
     <td><button type="button" [hidden]= "hideButtons"  (click)="OrderConfirmation()">OK</button></td>        
-    <td><button type="button" [hidden]="hideButtons" (click)="DeleteOrder()">Cancel</button></td> 
+    <td><button type="button" [hidden]="hideButtons" (click)="DeleteOrder()">Delete</button></td> 
         </tr>
     </table>
   

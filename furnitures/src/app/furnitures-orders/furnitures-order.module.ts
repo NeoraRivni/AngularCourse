@@ -10,6 +10,7 @@ import { OrderComponent } from './order/order.component';
 import { OrdersComponent } from './orders/orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule
   ],
   declarations: [LoginComponent, DoOrderComponent, OrderListComponent, 
-    OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent, HomePageComponent],
+    OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent, HomePageComponent, AllOrdersComponent],
   exports:[LoginComponent, DoOrderComponent,OrderItemComponent,OrderListComponent,OrderComponent,OrderNotProvidComponent]
 })
 export class FurnituresOrderModule { }

@@ -8,14 +8,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private router:Router,private route:ActivatedRoute) {
+  constructor(private router:Router,private route:ActivatedRoute, ) {
      }
-  idWorker: number;
+  public idWorker: number;
 
   ngOnInit() {
     this.route.paramMap.subscribe(params=>{
       this.idWorker=+params.get('id'); });
-      this.router.navigate(['do-order',this.idWorker]);
+      // this.router.navigate(['do-order',this.idWorker]);
   }
     
 }

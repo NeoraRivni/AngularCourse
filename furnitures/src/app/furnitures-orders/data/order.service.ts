@@ -4,25 +4,28 @@ import { HttpClient } from "@angular/common/http"
 import { OrderViewModel } from "../do-order/order.view-model";
 import { FurnitureViewModel } from "../do-order/furniture.view-model";
 import { OrderItems } from "../model/order_items";
-import { OrderDB } from "../../../db/orderDB";
 import { OrderNViewModel } from "../order/orderN.view-model";
 import { Order } from "../model/orders";
+import { Furniture } from "../model/furnitures";
+import { OrdersDB } from "../../../db/ordersDB";
+import { SupplierService } from "./suppliers.service";
+import { WorkersService } from "./workers.service";
 
 @Injectable()
 export class OrderService {
-    SupplierService: any;
+  //  SupplierService: any;
   
     baseUrl: string="http://localhost:3000";
     
     
-        constructor(private httpClient:HttpClient){
+        constructor(private httpClient:HttpClient, private suppliersService:SupplierService, private workersService: WorkersService){
         }
 
     
     
     async  ListAllOrders():Promise< OrderNViewModel[]>{
-        let ordersUrl = this.baseUrl+'/orders';
-        let ordersFromDB = await this.httpClient.get<Order[]>(ordersUrl).toPromise();
+        let ordersUrl = this.baseUrl+"/orders";
+        let ordersFromDB = await this.httpClient.get<OrdersDB[]>(ordersUrl).toPromise();
         let vmOrdersREsult:OrderNViewModel[] = new Array<OrderNViewModel>();
 
         for(let item of ordersFromDB){
@@ -30,8 +33,14 @@ export class OrderService {
             vmOrderN.id=item.id;
             vmOrderN.orderStatus=item.orderStatus;
             vmOrderN.supplierId=item.supplierId;
-            vmOrderN.supplierName=this.SupplierService.getName(item.supplierId);
+           this.suppliersService.getName(item.supplierId).then(result=>{
+            vmOrderN.supplierName = result;
+           });
+           this.workersService.getName(item.workerId).then(result=>{
+            vmOrderN.workerName = result;
+           });
             vmOrderN.workerId=item.workerId;
+            vmOrderN.orderDate=item.orderDate;            
             vmOrdersREsult.push(vmOrderN);
         }
         return vmOrdersREsult; 
@@ -40,23 +49,30 @@ export class OrderService {
     }
 
 //איך לוקחים רק את ההזמנות שהסטטוס שלהם שקר
-     async ListOrderIsNotProvided():Promise< OrderNViewModel[]>{
+     async ListOrderIsNotProvided():Promise<OrderNViewModel[]>{
          debugger;
+         
          let furnituresUrl = this.baseUrl+"/orders?orderStatus="+false;
-         let ordersFromDB = await this.httpClient.get<Order[]>(furnituresUrl).toPromise();
-        // let ordersUrl = this.baseUrl+'/orders';
-        let vmOrdersREsult:OrderNViewModel[] = new Array<OrderNViewModel>();
-        // let ordersFromDB  =  await this.httpClient.get<Order[]>(ordersUrl).toPromise();
+         let ordersFromDB = await this.httpClient.get<OrdersDB[]>(furnituresUrl).toPromise();
+         let vmOrdersREsult:OrderNViewModel[] = new Array<OrderNViewModel>();
        
         if(ordersFromDB.length>0)
         {
+            debugger;
          for(let item of ordersFromDB){
             let vmOrderN:OrderNViewModel = new OrderNViewModel();
             vmOrderN.id=item.id;
             vmOrderN.orderStatus=item.orderStatus;
             vmOrderN.supplierId=item.supplierId;
-            vmOrderN.supplierName=this.SupplierService.getName(item.supplierId);
+            this.suppliersService.getName(item.supplierId).then(result=>{
+                vmOrderN.supplierName = result;
+               });
+            this.workersService.getName(item.workerId).then(result=>{
+                vmOrderN.workerName = result;
+               });
             vmOrderN.workerId=item.workerId;
+            vmOrderN.orderDate=item.orderDate;
+            debugger;
             vmOrdersREsult.push(vmOrderN);
         }
     }
@@ -65,21 +81,22 @@ export class OrderService {
 
 
     async OrderConfirmation(orderId: number) : Promise<void> {
-        let ordersUrl = this.baseUrl+"/orders?orderId="+orderId;
-        let ordersFromDB = await this.httpClient.get<Order[]>(ordersUrl).toPromise();
+        let ordersUrl = this.baseUrl+"/orders?id="+orderId;
+        let ordersFromDB = await this.httpClient.get<OrdersDB[]>(ordersUrl).toPromise();
         if (ordersFromDB.length>0){
-            let currentOrder = new Order(ordersFromDB[0].orderDate,
+            
+            let currentOrder = new OrdersDB(orderId, ordersFromDB[0].orderDate,
                 ordersFromDB[0].workerId,ordersFromDB[0].supplierId,true);
-                this.httpClient.post(ordersUrl, currentOrder).toPromise()
-        }
+                   await this.httpClient.put(this.baseUrl+'/orders/'+orderId,currentOrder).toPromise();
+             }
     }
 
     async DeleteOrder(orderId: number) : Promise<void> {
         debugger;
-        let ordersUrl1 = this.baseUrl+"/orders?orderId="+orderId;
+        let ordersUrl1 = this.baseUrl+"/orders/"+orderId;
         //let ordersFromDB1 = await this.httpClient.get<Order[]>(ordersUrl1).toPromise();
        // if (ordersFromDB1.length>0){
-                this.httpClient.delete(ordersUrl1).toPromise();
+             await   this.httpClient.delete(ordersUrl1).toPromise();
         //}
         let ordersUrl2 = this.baseUrl+"/order_items/"+orderId;
         //let ordersFromDB2 = await this.httpClient.get<Order[]>(ordersUrl2).toPromise();
@@ -89,19 +106,28 @@ export class OrderService {
     async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<void>{
         debugger;
         let newOrder:Order;
-        let currentOrder = new Order(new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
+        let flag: boolean;
+        flag=false;
+        for (let item of currentFurnituresVM) 
+           if(item.amount>0)
+            flag=true;
+          if(flag)
+              { let currentOrder = new Order(new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
         
-        newOrder =  await this.httpClient.post<Order>(this.baseUrl + '/orders', currentOrder).toPromise();//.then(result=>{
+                 newOrder =  await this.httpClient.post<Order>(this.baseUrl + '/orders', currentOrder).toPromise();//.then(result=>{
         
-        let currentOrderItem : OrderItems;
+                 let currentOrderItem : OrderItems;
     
-        for (let item of currentFurnituresVM) {
-            if(item.amount>0){
-            currentOrderItem = new OrderItems(newOrder.id,item.id ,item.amount);
-           await this.httpClient.post<OrderItems>(this.baseUrl+'/order_items',currentOrderItem).toPromise();
-            }
+                  for (let item of currentFurnituresVM) {
+                     if(item.amount>0){
+                        currentOrderItem = new OrderItems(newOrder.id,item.id ,item.amount);
+                          await this.httpClient.post<OrderItems>(this.baseUrl+'/order_items',currentOrderItem).toPromise();
+                          }
+                      }
+               }
+               else{}
         }
-        }
+        
 
     
 }

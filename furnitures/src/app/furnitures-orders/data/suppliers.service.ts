@@ -13,9 +13,11 @@ export class SupplierService {
         this.getAllSuppliers();
     }
 
-    async getName(id: number):Promise<string>{
-         let suppliersFromDB = await this.httpClient.get<Supplier[]>(this.baseUrl+"/suppliers?id"+id).toPromise();
-          return suppliersFromDB[0].supplierName;
+    async getName(numId: number):Promise<string>{
+        debugger;
+         let suppliersFromDB = await this.httpClient.get<Supplier[]>(this.baseUrl+"/suppliers?id="+numId).toPromise();
+         debugger;
+         return suppliersFromDB[0].supplierName;
     }
     
 

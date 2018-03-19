@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
        if(result>0){
         this.router.navigate(['home-page',result]);
       }else{
-        this.message="Sorry, there is no such a worker in the sustem"
+        this.message="Sorry, there is no such a worker in the system";
       }
     });
   }

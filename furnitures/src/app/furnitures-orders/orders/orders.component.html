@@ -2,12 +2,15 @@
     <table bordercolor="blue" width="50%">
         <tr>
     <td> order number</td>
-    <td> supplier name</td>
     <td> date</td>
+    <td> supplier name</td>
+    <td>worker name</td>
     <td> status</td>
        </tr>
        <tr>
-       <order *ngFor="let or of orders" [order]="or" ></order>
+          
+       <order *ngFor="let order of ordersList" [order]="order" [hideButtons]=hideButtons></order>
+       
        <!-- <order *ngFor="let or of orders" [order]="or" (click)="selectOrder(or)"></order> -->
        <!-- <order *ngFor="let or of ordersList" [order]="or" (approveOrder)="passApproveOrder($event)" (cancleOrder)="passCancleOrder ($event)"> </order>/> -->
     </tr>

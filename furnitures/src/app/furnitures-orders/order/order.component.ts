@@ -19,6 +19,7 @@ export class OrderComponent implements OnInit {
  message:string;
   
  ngOnInit() {
+   debugger;
   }
 
   OrderConfirmation(){

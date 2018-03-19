@@ -9,6 +9,12 @@ export class WorkersService {
     constructor(private httpClient:HttpClient){
         
     }
+    async getName(numId: number):Promise<string>{
+        debugger;
+         let workersFromDB = await this.httpClient.get<Worker[]>(this.baseUrl+"/workers?id="+numId).toPromise();
+         debugger;
+         return workersFromDB[0].workerName;
+    }
     
     async checkIfWorkerExists(workerName:string,workerPass:string):Promise<number>{
         let workersUrl = this.baseUrl+"/workers?workerName="+workerName+"&workerPassword="+workerPass;

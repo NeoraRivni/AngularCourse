@@ -1,15 +1,12 @@
 <div>
-                <table bordercolor="blue" width="50%">
-                    <tr>
-                <td> order number</td>
-                <td> supplier name</td>
-                <td> date</td>
-                <td> status</td>
-                   </tr>
-                   <tr>
-                   <order *ngFor="let or of ordersList" [order]="or" ></order>
-                </tr>
-            </table>
-<order  [hideButtons]="true"></order>
+    <table bordercolor="blue" width="50%">
+        <tr>
+            
+           <td>
+                <orders [ordersList]=ordersList ></orders>           
+            </td>
+          
+        </tr>
 
+    </table>
 </div>

@@ -8,6 +8,7 @@ import { Furniture } from '../model/furnitures';
 import { FurnitureViewModel } from './furniture.view-model';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { HomePageComponent } from '../home-page/home-page.component';
 
 @Component({
   selector: 'do-order',
@@ -23,15 +24,18 @@ export class DoOrderComponent implements OnInit {
   private hideList:boolean = true;
 
   constructor(private suppliersService:SupplierService,private furnituresService:FurnituresService,
-    private orderService:OrderService,private route:ActivatedRoute ,private router:Router) { }
+    private orderService:OrderService,private route:ActivatedRoute ,private router:Router, 
+  private homePage: HomePageComponent) { }
 
   ngOnInit() {
     this.suppliersService.getAllSuppliers().then(result=>{
     this.suppliers = result;
     });
-    this.route.paramMap.subscribe(params=>{
-    this.currentOrder.workerId=+params.get('id');
-    })
+    debugger;
+    this.currentOrder.workerId=this.homePage.idWorker;
+    // this.route.paramMap.subscribe(params=>{
+    // this.currentOrder.workerId=+params.get('idWorker');
+    // });
   }
   searchForFurnitures() {
     debugger;

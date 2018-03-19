@@ -7,7 +7,7 @@ import { OrderNViewModel } from '../order/orderN.view-model';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
-  @Input() private orders: OrderNViewModel[];
+  @Input() private ordersList: OrderNViewModel[];
   @Input()  private hideButtons : boolean;
   // @Output() private hh : boolean=this.hideButtons;
   // @Output() private recordSelected: EventEmitter<OrderNViewModel> = new EventEmitter<OrderNViewModel>();
@@ -16,6 +16,7 @@ export class OrdersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    debugger;
   }
   // selectOrder(selectOrder:OrderNViewModel) {
     

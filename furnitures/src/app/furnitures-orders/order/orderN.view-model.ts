@@ -1,7 +1,8 @@
 export class OrderNViewModel{
     id:number;
-    workerId:number;//we should get it by the routing
-   // workerName:string;
+    workerId:number;
+    orderDate: Date;
+    workerName:string;
     supplierId:number;
     supplierName:string;
     orderStatus:boolean;
