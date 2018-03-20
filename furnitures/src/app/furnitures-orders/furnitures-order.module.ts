@@ -11,6 +11,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { ItemInOrderComponent } from './item-in-order/item-in-order.component';
+import { ItemsInOrderComponent } from './items-in-order/items-in-order.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,7 @@ import { AllOrdersComponent } from './all-orders/all-orders.component';
     AppRoutingModule
   ],
   declarations: [LoginComponent, DoOrderComponent, OrderListComponent, 
-    OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent, HomePageComponent, AllOrdersComponent],
+    OrderNotProvidComponent, OrderItemComponent, OrderComponent, OrdersComponent, HomePageComponent, AllOrdersComponent, ItemInOrderComponent, ItemsInOrderComponent],
   exports:[LoginComponent, DoOrderComponent,OrderItemComponent,OrderListComponent,OrderComponent,OrderNotProvidComponent]
 })
 export class FurnituresOrderModule { }

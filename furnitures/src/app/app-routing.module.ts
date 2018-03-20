@@ -14,8 +14,7 @@ const routes:Routes=[
     {path: 'home-page/:id', component: HomePageComponent, children: [
          {path: 'do-order', component: DoOrderComponent},
          {path: 'order-not-provid', component: OrderNotProvidComponent},
-         {path: 'all-orders', component: AllOrdersComponent},
-         {path: 'login', component: LoginComponent}
+         {path: 'all-orders', component: AllOrdersComponent}
          
      ]}
  ];

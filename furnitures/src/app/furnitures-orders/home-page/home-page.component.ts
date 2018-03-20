@@ -17,5 +17,8 @@ export class HomePageComponent implements OnInit {
       this.idWorker=+params.get('id'); });
       // this.router.navigate(['do-order',this.idWorker]);
   }
+  LogOut() {
+    this.router.navigate(['login']);
+  }
     
 }

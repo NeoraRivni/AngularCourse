@@ -19,13 +19,21 @@ export class LoginComponent implements OnInit {
 
   checkLogin(){
     this.workerService.checkIfWorkerExists(this.currentWorker.name,this.currentWorker.password).then(result=>{
+      debugger;
       if(result)
-       if(result>0){
+      {debugger;
+       if(result>0)
+       {
+        debugger;
         this.router.navigate(['home-page',result]);
-      }else{
-        this.message="Sorry, there is no such a worker in the system";
       }
+      else
+      {
+        this.message="Sorry, there is no such a worker in the system!";
+      }
+    }
     });
+  }
   }
 
 }

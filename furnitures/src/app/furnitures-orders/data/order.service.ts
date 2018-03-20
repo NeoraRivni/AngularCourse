@@ -10,6 +10,7 @@ import { Furniture } from "../model/furnitures";
 import { OrdersDB } from "../../../db/ordersDB";
 import { SupplierService } from "./suppliers.service";
 import { WorkersService } from "./workers.service";
+import { promise } from "selenium-webdriver";
 
 @Injectable()
 export class OrderService {
@@ -21,7 +22,11 @@ export class OrderService {
         constructor(private httpClient:HttpClient, private suppliersService:SupplierService, private workersService: WorkersService){
         }
 
-    
+    async getAllItemsOrder(id:Number):Promise<OrderItems[]>{
+        let ordersUrl = this.baseUrl+"/order_items?orderId="+id;
+        let ordersFromDB = await this.httpClient.get<OrderItems[]>(ordersUrl).toPromise();
+        return ordersFromDB;
+    }
     
     async  ListAllOrders():Promise< OrderNViewModel[]>{
         let ordersUrl = this.baseUrl+"/orders";

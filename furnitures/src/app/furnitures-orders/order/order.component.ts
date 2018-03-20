@@ -3,6 +3,7 @@ import { OrderViewModel } from '../do-order/order.view-model';
 import { SupplierService } from '../data/suppliers.service';
 import { OrderNViewModel } from './orderN.view-model';
 import { OrderService } from '../data/order.service';
+import { OrderItems } from '../model/order_items';
 
 
 @Component({
@@ -13,6 +14,10 @@ import { OrderService } from '../data/order.service';
 export class OrderComponent implements OnInit {
   @Input() private order: OrderNViewModel;
   @Input()  private hideButtons : boolean;
+  private itemsInOrder: OrderItems[];
+  private hiden=true;
+  private hiden1=false;
+
 
   constructor(private suppliersService:SupplierService, private orderService:OrderService) { 
     }
@@ -25,12 +30,26 @@ export class OrderComponent implements OnInit {
   OrderConfirmation(){
     this.orderService.OrderConfirmation(this.order.id).then(result=>{
       this.message="You'r order was ok successfully!";
-  })
+  });
+
  }
  DeleteOrder(){
      this.orderService.DeleteOrder(this.order.id).then(result=>{
        this.message="You'r order was delete successfully!";
-     })
+     });
+    //  this.orderService.ListOrderIsNotProvided();
+
+ }
+ getAllItemsOrder(){
+   this.orderService.getAllItemsOrder(this.order.id).then(result=>{
+    this.itemsInOrder=result;
+    this.hiden=false;
+    this.hiden1=true;
+  });
+ }
+ closeDetails(){
+   this.hiden=true;
+   this.hiden1=false;
  }
 
 }

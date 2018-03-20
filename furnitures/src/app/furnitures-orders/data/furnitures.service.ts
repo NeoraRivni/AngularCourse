@@ -2,6 +2,7 @@ import { Furniture } from "../model/furnitures";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FurnitureViewModel } from "../do-order/furniture.view-model";
+import { NullAstVisitor } from "@angular/compiler";
 
 @Injectable()
 export class FurnituresService {
@@ -27,5 +28,6 @@ export class FurnituresService {
         }
         return result;
      }
+    
 
 }

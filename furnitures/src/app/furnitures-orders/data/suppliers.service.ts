@@ -14,9 +14,7 @@ export class SupplierService {
     }
 
     async getName(numId: number):Promise<string>{
-        debugger;
          let suppliersFromDB = await this.httpClient.get<Supplier[]>(this.baseUrl+"/suppliers?id="+numId).toPromise();
-         debugger;
          return suppliersFromDB[0].supplierName;
     }
     
