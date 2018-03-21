@@ -3,12 +3,18 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FurnitureViewModel } from "../do-order/furniture.view-model";
 import { NullAstVisitor } from "@angular/compiler";
+import { promise } from "selenium-webdriver";
 
 @Injectable()
 export class FurnituresService {
     baseUrl: string="http://localhost:3000";
 
     constructor(private httpClient:HttpClient){}
+    async getFurniture(id:number):Promise<Furniture>{
+        let furnituresUrl = this.baseUrl+"/furnitures?id="+id;
+        let furnituresFromDB = await this.httpClient.get<Furniture[]>(furnituresUrl).toPromise();
+        return furnituresFromDB[0];
+    }
 
     async getFurnitureForSupplier(supplierId:number): Promise<FurnitureViewModel[]>{
         let furnituresUrl = this.baseUrl+"/furnitures?supplierId="+supplierId;

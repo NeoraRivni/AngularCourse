@@ -39,6 +39,7 @@ export class DoOrderComponent implements OnInit {
   }
   searchForFurnitures() {
     debugger;
+    this.message="";
     this.furnituresService.getFurnitureForSupplier(this.currentOrder.supplierId).then(result=>{
       this.furnitures=result;
       this.hideList=false;
@@ -47,6 +48,7 @@ export class DoOrderComponent implements OnInit {
   doOrder(orderItemsLIst:FurnitureViewModel[]){
     debugger;
       this.orderService.doOrder(this.currentOrder,orderItemsLIst).then(result=>{
+      this.hideList=true;
       this.message="You'r order was preformed successfully!";
       });
 }

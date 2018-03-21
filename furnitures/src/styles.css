@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.routerContainer{
+    border-color: rgb(92, 1, 1);
+    height: 70%;
+    width: 100%;
+    background-color: rgb(148, 134, 160);
+    align-content: center;
+};
+.myContainer{
+    width: 20%
+}

@@ -1,0 +1,12 @@
+.current{
+
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+.bg{
+    background-image:#ad8755 url("/assets/img_avatar2.png") no-repeat fixed center; 
+}
+a{
+    color: rgb(207, 22, 22);
+}
