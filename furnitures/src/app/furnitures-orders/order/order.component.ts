@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, NgModule } from '@angular/core';
 import { OrderViewModel } from '../do-order/order.view-model';
 import { SupplierService } from '../data/suppliers.service';
 import { OrderNViewModel } from './orderN.view-model';
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
+  OrderNotProvidComponent: any;
   @Input() private order: OrderNViewModel;
   @Input()  private hideButtons : boolean;
   // @Output() private passOrderItems: EventEmitter<Order> = new EventEmitter<Order>();
@@ -22,11 +23,13 @@ export class OrderComponent implements OnInit {
   private hiden=true;
   private hiden1=false;
 
+  //  created_at=this.order.orderDate;
+  
 
   constructor(private suppliersService:SupplierService, private orderService:OrderService) { 
     }
  message:string;
-  
+ 
  ngOnInit() {
    debugger;
   }
@@ -43,7 +46,8 @@ export class OrderComponent implements OnInit {
  DeleteOrder(){
   this.message="";
      this.orderService.DeleteOrder(this.order.id).then(result=>{
-       this.message="You'r order was delete successfully!";
+      //  this.passOrderItems.emit();
+        this.message="You'r order was delete successfully!";
      });
     //  this.passOrderItems.emit(this.order);
     //  this.orderService.ListOrderIsNotProvided();

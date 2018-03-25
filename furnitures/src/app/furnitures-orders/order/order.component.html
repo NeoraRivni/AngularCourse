@@ -7,15 +7,18 @@
     <td>{{order.workerName}}</td>    
     <td>{{order.orderStatus}}</td>
     <td><button type="button"  [hidden]= "hideButtons"  (click)="OrderConfirmation()" >OK</button></td>        
-    <td><button type="button" [hidden]="hideButtons" (click)="DeleteOrder()">Delete</button></td> 
+    <td><button type="button" [hidden]="hideButtons" (click)="DeleteOrder()" >Delete</button></td> 
     <td><div  [hidden]="hiden1">
-        <button type="button" (click)="getAllItemsOrder()">View details</button></div></td>
+        <button type="button"class="myButton" (click)="getAllItemsOrder()">View details</button></div></td>
     <td><div  [hidden]="hiden">
-        <button type="button" (click)="closeDetails()">Close</button></div></td>
+        <button type="button" class="myButton" (click)="closeDetails()"  >Close</button></div></td>
         
 <div [hidden]="hiden">
 <items-in-order [itemsO]="itemsInOrder" ></items-in-order>
 </div>
         </tr>
     </table>
+
+   
+   
   

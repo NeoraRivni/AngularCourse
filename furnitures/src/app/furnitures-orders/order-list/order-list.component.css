@@ -1,0 +1,39 @@
+.myButton {
+	background-color:#ebe688;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #c9ab34;
+	display:inline-block;
+	cursor:pointer;
+	color:#e6ac65;
+	font-family:Arial;
+	font-size:15px;
+	padding:4px 15px;
+    text-decoration:none;
+    margin-right: 25%; 
+    margin-left: 25%; 
+}
+.myButton:hover {
+	background-color:#e7f099;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+table td, th {
+border-width:medium;
+border-collapse:seperate;
+border-spacing:2px; 
+border-style:solid; 
+border-color:grey;
+} 
+table td, th 
+{ 
+text-align:left; 
+vertical-align:bottom;
+} 
+th 
+{ 
+text-align:center; 
+}

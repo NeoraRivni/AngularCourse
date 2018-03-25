@@ -1,0 +1,17 @@
+table td, th {
+    border-width:medium;
+    border-collapse:seperate;
+    border-spacing:2px; 
+    border-style:solid; 
+    border-color:grey;
+    } 
+    table td, th 
+    { 
+    text-align:left; 
+    vertical-align:bottom;
+    } 
+    th 
+    { 
+    text-align:center; 
+    }
+    

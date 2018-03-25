@@ -15,10 +15,8 @@ export class AllOrdersComponent implements OnInit {
     constructor( private orderService: OrderService) {  
     }
     ngOnInit() {
-      debugger;
      this.orderService.ListAllOrders().then(result=>{
         this.ordersList = result;
-        debugger;
         });
     }
     

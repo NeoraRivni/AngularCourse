@@ -49,6 +49,7 @@ export class DoOrderComponent implements OnInit {
     debugger;
       this.orderService.doOrder(this.currentOrder,orderItemsLIst).then(result=>{
       this.hideList=true;
+      if (result)
       this.message="You'r order was preformed successfully!";
       });
 }

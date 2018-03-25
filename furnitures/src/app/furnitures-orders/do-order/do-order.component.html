@@ -1,11 +1,12 @@
+<body>
 <div>
-    please select supplier name:
+    <p>please select supplier name:
       <select [(ngModel)]="currentOrder.supplierId">
           <option *ngFor="let s of suppliers" [value]="s.id">{{s.supplierName}}</option>       
-      </select>
+      </select></p>
 </div>
 <div>
-    <button type="button" (click)="searchForFurnitures()">Search</button>
+    <button type="button" class="myButton" (click)="searchForFurnitures()">Search</button>
 </div>
 
 <!-- <div *ngFor="let f of furnitures" >{{f.furnitureName  f.furnitureMaterial}}</div> -->
@@ -13,3 +14,4 @@
 <order-list [currentFurnitures]=furnitures (passOrderItems)="doOrder($event)"></order-list>
 </div>
 <p>{{this.message}}</p>
+</body>

@@ -1,20 +1,20 @@
 <div>
-    <table bordercolor="blue" width="50%">
+    <table>
         <tr>
-    <td> order number</td>
-    <td> date</td>
-    <td> supplier name</td>
-    <td>worker name</td>
-    <td> status</td>
+    <th> order number</th>
+    <th> date</th>
+    <th> supplier name</th>
+    <th>worker name</th>
+    <th> status</th>
        </tr>
+       <!-- <div class="recent" ng-repeat="order in
+       (ordersList = (order.orderDate | orderBy: 'created_at' | limitTo: 1))">
+    </div> -->
        <tr>
-          
        <order *ngFor="let order of ordersList" [order]="order" [hideButtons]=hideButtons ></order>
        
        <!-- <order *ngFor="let or of orders" [order]="or" (click)="selectOrder(or)"></order> -->
        <!-- <order *ngFor="let or of ordersList" [order]="or" (approveOrder)="passApproveOrder($event)" (cancleOrder)="passCancleOrder ($event)"> </order>/> -->
     </tr>
 </table>
-
-
-<div>
+ </div>

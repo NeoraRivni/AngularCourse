@@ -220,18 +220,39 @@
       "orderStatus": true
     },
     {
+      "id": 29,
       "orderDate": "2018-03-21T18:54:02.316Z",
       "workerId": 1,
       "supplierId": "2",
-      "orderStatus": false,
-      "id": 29
+      "orderStatus": true
     },
     {
+      "id": 30,
       "orderDate": "2018-03-21T18:54:35.079Z",
       "workerId": 1,
       "supplierId": "3",
+      "orderStatus": true
+    },
+    {
+      "id": 31,
+      "orderDate": "2018-03-25T15:14:20.872Z",
+      "workerId": 1,
+      "supplierId": "2",
+      "orderStatus": true
+    },
+    {
+      "orderDate": "2018-03-25T15:42:37.640Z",
+      "workerId": 1,
+      "supplierId": "2",
       "orderStatus": false,
-      "id": 30
+      "id": 32
+    },
+    {
+      "orderDate": "2018-03-25T16:25:43.052Z",
+      "workerId": 1,
+      "supplierId": "2",
+      "orderStatus": false,
+      "id": 33
     }
   ],
   "order_items": [
@@ -324,6 +345,30 @@
       "furnitureId": 3,
       "numberOfItems": 77,
       "id": 25
+    },
+    {
+      "orderId": 31,
+      "furnitureId": 1,
+      "numberOfItems": 6,
+      "id": 26
+    },
+    {
+      "orderId": 32,
+      "furnitureId": 1,
+      "numberOfItems": 9,
+      "id": 27
+    },
+    {
+      "orderId": 33,
+      "furnitureId": 1,
+      "numberOfItems": 4,
+      "id": 28
+    },
+    {
+      "orderId": 33,
+      "furnitureId": 6,
+      "numberOfItems": 6,
+      "id": 29
     }
   ]
 }

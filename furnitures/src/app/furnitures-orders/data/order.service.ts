@@ -108,7 +108,7 @@ export class OrderService {
         this.httpClient.delete(ordersUrl2).toPromise();
     }
     
-    async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<void>{
+    async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<boolean>{
         debugger;
         let newOrder:Order;
         let flag: boolean;
@@ -129,8 +129,11 @@ export class OrderService {
                           await this.httpClient.post<OrderItems>(this.baseUrl+'/order_items',currentOrderItem).toPromise();
                           }
                       }
+                      return true;
                }
-               else{}
+               else{
+                   return false;
+               }
         }
         
 

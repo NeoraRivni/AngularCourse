@@ -1,12 +1,26 @@
-.current{
+.myButton {
+	background-color:#ebe688;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #c9ab34;
+	display:inline-block;
+	cursor:pointer;
+	color:#e6ac65;
+	font-family:Arial;
+	font-size:15px;
+	padding:4px 15px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#e7f099;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+nav{
+    font-size:30px;
+    font-weight: bold;
 
-    align-items: center;
-    align-content: center;
-    align-self: center;
-}
-.bg{
-    background-image:#ad8755 url("/assets/img_avatar2.png") no-repeat fixed center; 
-}
-a{
-    color: rgb(207, 22, 22);
 }

@@ -29,7 +29,7 @@ private ordersList:OrderNViewModel[] = new Array<OrderNViewModel>();
       debugger;
       });
   }
-  // OOO(ord: Order){
+  // updateList(){
   //   this.orderService.ListOrderIsNotProvided().then(result=>{
   //     this.ordersList = result;
   //     debugger;

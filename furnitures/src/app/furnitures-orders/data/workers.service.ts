@@ -10,9 +10,7 @@ export class WorkersService {
         
     }
     async getName(numId: number):Promise<string>{
-        debugger;
          let workersFromDB = await this.httpClient.get<Worker[]>(this.baseUrl+"/workers?id="+numId).toPromise();
-         debugger;
          return workersFromDB[0].workerName;
     }
     

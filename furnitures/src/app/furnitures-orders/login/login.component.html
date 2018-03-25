@@ -1,16 +1,17 @@
-
+<body>
 <p>
  please insert your name and password
 </p>
 <label>
 Name: 
 <input type="text" [(ngModel)]="currentWorker.name"/>
-</label>
+</label><br/>
+<p></p>
 <label>
-password: 
+password:
 <input type="text" [(ngModel)]="currentWorker.password"/>
-</label>
-<button type="button" (click)="checkLogin()">Login</button>
+</label><br/>
+<p></p>
+<button type="button" (click)="checkLogin()"class="btn btn-default">Login</button>
 <p>{{this.message}}</p>
-
-
+</body>
