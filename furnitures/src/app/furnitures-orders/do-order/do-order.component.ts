@@ -31,20 +31,24 @@ export class DoOrderComponent implements OnInit {
     this.suppliersService.getAllSuppliers().then(result=>{
     this.suppliers = result;
     });
-    debugger;
+
     this.currentOrder.workerId=this.homePage.idWorker;
-    // this.route.paramMap.subscribe(params=>{
-    // this.currentOrder.workerId=+params.get('idWorker');
-    // });
   }
+  //הבאת רשימת הרהיטים לפי ספק- נפעיל את הפונקציה המתאימה מהסרוויס
   searchForFurnitures() {
-    debugger;
     this.message="";
     this.furnituresService.getFurnitureForSupplier(this.currentOrder.supplierId).then(result=>{
       this.furnitures=result;
-      this.hideList=false;
+      
+      if(result.length>0)
+      {this.hideList=false;}
+      else{
+        this.message="select supplier";
+      }
+      
     });
   }
+  //ביצוע הזמנה- נפעיל את הפונקציה המתאימה מהסרוויס
   doOrder(orderItemsLIst:FurnitureViewModel[]){
     debugger;
       this.orderService.doOrder(this.currentOrder,orderItemsLIst).then(result=>{

@@ -10,12 +10,13 @@ export class FurnituresService {
     baseUrl: string="http://localhost:3000";
 
     constructor(private httpClient:HttpClient){}
+    //פונקציה המחזירה רהיט לפי קוד
     async getFurniture(id:number):Promise<Furniture>{
         let furnituresUrl = this.baseUrl+"/furnitures?id="+id;
         let furnituresFromDB = await this.httpClient.get<Furniture[]>(furnituresUrl).toPromise();
         return furnituresFromDB[0];
     }
-
+    //פונקציה המחזירה רשימת רהיטים לפי ספק
     async getFurnitureForSupplier(supplierId:number): Promise<FurnitureViewModel[]>{
         let furnituresUrl = this.baseUrl+"/furnitures?supplierId="+supplierId;
         let furnituresFromDB = await this.httpClient.get<Furniture[]>(furnituresUrl).toPromise();

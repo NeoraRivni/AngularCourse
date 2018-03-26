@@ -1,12 +1,13 @@
 .myButton {
-	background-color:#ebe688;
+	background-color:#91b988;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #c9ab34;
+	border:1px solid #91b988;
 	display:inline-block;
 	cursor:pointer;
-	color:#e6ac65;
+	color:gray;
+
 	font-family:Arial;
 	font-size:15px;
 	padding:4px 15px;
@@ -15,7 +16,8 @@
     margin-left: 25%; 
 }
 .myButton:hover {
-	background-color:#e7f099;
+
+	background-color:#91b988;
 }
 .myButton:active {
 	position:relative;

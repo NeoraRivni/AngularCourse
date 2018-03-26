@@ -1,26 +1,40 @@
 .myButton {
-	background-color:#ebe688;
+	background-color:#ac99ab;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #c9ab34;
+	border:1px solid #ac99ab;
 	display:inline-block;
 	cursor:pointer;
-	color:#e6ac65;
+	color:#3e1e42;
 	font-family:Arial;
 	font-size:15px;
 	padding:4px 15px;
 	text-decoration:none;
+	align-content: right;
+}
+a{
+	color: rgb(78, 70, 78);
+	align-items: center;
+	padding-right: 30px;
+
 }
 .myButton:hover {
-	background-color:#e7f099;
+	background-color:#dee2bd;
 }
 .myButton:active {
 	position:relative;
 	top:1px;
 }
 nav{
-    font-size:30px;
-    font-weight: bold;
+	font-size:  24px;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 30px;
+	
+
+}
+body {
+	background-color: rgb(239, 207, 252); 
 
 }

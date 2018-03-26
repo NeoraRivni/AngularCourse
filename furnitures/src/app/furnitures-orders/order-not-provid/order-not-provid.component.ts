@@ -5,6 +5,7 @@ import { OrderService } from '../data/order.service';
 import { Order } from '../model/orders';
 import { OrderNViewModel } from '../order/orderN.view-model';
 import { Output } from '@angular/core/src/metadata/directives';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'order-not-provid',
@@ -13,28 +14,19 @@ import { Output } from '@angular/core/src/metadata/directives';
 })
 
 export class OrderNotProvidComponent implements OnInit {  
-// @Input()  private hideButtons : boolean;
-// @Output() false;
+
 private ordersList:OrderNViewModel[] = new Array<OrderNViewModel>();
-// private hideButtons=false;
+
 
   constructor( private orderService: OrderService) {  
   
     
   }
   ngOnInit() {
-    debugger;
    this.orderService.ListOrderIsNotProvided().then(result=>{
       this.ordersList = result;
-      debugger;
       });
   }
-  // updateList(){
-  //   this.orderService.ListOrderIsNotProvided().then(result=>{
-  //     this.ordersList = result;
-  //     debugger;
-  //     });
   
-  // }
   
 }

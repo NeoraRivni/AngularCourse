@@ -13,15 +13,8 @@ export class ItemInOrderComponent implements OnInit {
 
 @Input() private itemO: OrderItems;
 private currentFurniture: Furniture;
-  //  private furnitureName: string;
-  //  private furnitureColor: string;
-  //  private furnitureSize: string;
-  //  private furnitureMaterial: string;
-  //  private furniturePrice: number;
-   
-   
+
   constructor(private furnituresService : FurnituresService) { 
- 
 
   }
 
@@ -29,21 +22,5 @@ private currentFurniture: Furniture;
     this.furnituresService.getFurniture(this.itemO.furnitureId).then(result=>{
         this.currentFurniture=result;
       });
-    //  this.furnituresService.getName(this.itemO.furnitureId).then(result=>{
-    //   this.furnitureName=result;
-    // });
-    // this.furnituresService.getColor(this.itemO.furnitureId).then(result=>{
-    //   this.furnitureColor=result;
-    // });
-    // this.furnituresService.getName(this.itemO.furnitureId).then(result=>{
-    //   this.furnitureName=result;
-    // });
-    // this.furnituresService.getName(this.itemO.furnitureId).then(result=>{
-    //   this.furnitureName=result;
-    // });
-    // this.furnituresService.getName(this.itemO.furnitureId).then(result=>{
-    //   this.furnitureName=result;
-    // });
   }
-
 }

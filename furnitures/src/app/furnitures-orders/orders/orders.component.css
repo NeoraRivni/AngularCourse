@@ -1,4 +1,6 @@
 table td, th {
+    height: 100%;
+    /* width: 100%; */
     border-width:medium;
     border-collapse:seperate;
     border-spacing:2px; 
@@ -7,7 +9,7 @@ table td, th {
     } 
     table td, th 
     { 
-    text-align:left; 
+    text-align:center; 
     vertical-align:bottom;
     } 
     th 

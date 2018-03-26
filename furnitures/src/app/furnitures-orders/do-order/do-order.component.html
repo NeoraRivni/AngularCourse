@@ -1,3 +1,4 @@
+<!-- מסך ביצוע הזמנה -->
 <body>
 <div>
     <p>please select supplier name:
@@ -9,7 +10,6 @@
     <button type="button" class="myButton" (click)="searchForFurnitures()">Search</button>
 </div>
 
-<!-- <div *ngFor="let f of furnitures" >{{f.furnitureName  f.furnitureMaterial}}</div> -->
 <div [hidden]="hideList">
 <order-list [currentFurnitures]=furnitures (passOrderItems)="doOrder($event)"></order-list>
 </div>

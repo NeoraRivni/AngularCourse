@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   private message:string;
   ngOnInit() {
   }
-
+//בדיקה אם שם משתמש והסיסמה קיימים במערכת(הפעלת הפונקציה מהסרוויס), והצגת הודעות מתאימות
   checkLogin(){
     if (!this.currentWorker.name && !this.currentWorker.password)
     this.message="Enter a user name and password";
@@ -27,8 +27,6 @@ export class LoginComponent implements OnInit {
     this.message="Enter a password";
     else{
     this.workerService.checkIfWorkerExists(this.currentWorker.name,this.currentWorker.password).then(result=>{
-      // if(result)
-      // {
       if(result>0)
         this.router.navigate(['home-page',result]);
       else {
@@ -37,12 +35,7 @@ export class LoginComponent implements OnInit {
       else 
       this.message="Incorrect password";
       }
-
-      // }
     });
   }
   }
-  
-  
-
-}
+  }

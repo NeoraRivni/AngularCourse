@@ -1,20 +1,16 @@
+<!-- מסך המציג רשימת הזמנות -->
 <div>
-    <table>
+    <table width="60%" height="100%">
         <tr>
-    <th> order number</th>
-    <th> date</th>
-    <th> supplier name</th>
-    <th>worker name</th>
-    <th> status</th>
+    <td width="6%"> order number</td>
+    <td width="35%"> date</td>
+    <td width="6%"> supplier name</td>
+    <td width="6%">worker name</td>
+   <td width="6%"> status</td>
        </tr>
-       <!-- <div class="recent" ng-repeat="order in
-       (ordersList = (order.orderDate | orderBy: 'created_at' | limitTo: 1))">
-    </div> -->
-       <tr>
-       <order *ngFor="let order of ordersList" [order]="order" [hideButtons]=hideButtons ></order>
-       
-       <!-- <order *ngFor="let or of orders" [order]="or" (click)="selectOrder(or)"></order> -->
-       <!-- <order *ngFor="let or of ordersList" [order]="or" (approveOrder)="passApproveOrder($event)" (cancleOrder)="passCancleOrder ($event)"> </order>/> -->
-    </tr>
-</table>
+    </table>
+       <!-- <tr>  -->
+            <order *ngFor="let order of ordersList" [order]="order" [hideButtons]=hideButtons ></order>
+    <!-- </tr> -->
+<!-- </table> -->
  </div>

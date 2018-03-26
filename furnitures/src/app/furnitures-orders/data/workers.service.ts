@@ -9,16 +9,15 @@ export class WorkersService {
     constructor(private httpClient:HttpClient){
         
     }
+    //פונקציה המחזירה שם עובד לפי קוד
     async getName(numId: number):Promise<string>{
          let workersFromDB = await this.httpClient.get<Worker[]>(this.baseUrl+"/workers?id="+numId).toPromise();
          return workersFromDB[0].workerName;
     }
-    
+    //פונקציה הבודקת אם עובד קיים במערכת
     async checkIfWorkerExists(workerName:string,workerPass:string):Promise<number>{
         let workersUrl = this.baseUrl+"/workers?workerName="+workerName;
-        // +"&workerPassword="+workerPass;
         let workerFromDB = await this.httpClient.get<Worker[]>(workersUrl).toPromise();
-        debugger;
         if(!(workerFromDB.length>0)){
              return -1; }
         else{

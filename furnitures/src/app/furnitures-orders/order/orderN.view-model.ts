@@ -1,3 +1,4 @@
+//מחלקה המייצגת פרטי הזמנה כולל שם עובד ושם ספק
 export class OrderNViewModel{
     id:number;
     workerId:number;

@@ -17,42 +17,33 @@ export class OrderComponent implements OnInit {
   OrderNotProvidComponent: any;
   @Input() private order: OrderNViewModel;
   @Input()  private hideButtons : boolean;
-  // @Output() private passOrderItems: EventEmitter<Order> = new EventEmitter<Order>();
+
   
+ 
   private itemsInOrder: OrderItems[];
   private hiden=true;
   private hiden1=false;
 
-  //  created_at=this.order.orderDate;
-  
-
   constructor(private suppliersService:SupplierService, private orderService:OrderService) { 
     }
- message:string;
+
+ private hideOrder= false;
  
  ngOnInit() {
-   debugger;
+  
+   
   }
-
+  //אישור הזמנה- הפעלת הפונקציה המתאימה מהסרוויס
   OrderConfirmation(){
-    this.message="";
-    this.orderService.OrderConfirmation(this.order.id).then(result=>{
-      this.message="You'r order was ok successfully!";
-  });
-  // this.router.navigate(['order-not-provid']);
-  // this.passOrderItems.emit(this.order);
-
+    this.hideOrder=true;
+    this.orderService.OrderConfirmation(this.order.id);
  }
+ //מחיקת הזמנה- הפעלת הפונקציה המתאימה מהסרוויס
  DeleteOrder(){
-  this.message="";
-     this.orderService.DeleteOrder(this.order.id).then(result=>{
-      //  this.passOrderItems.emit();
-        this.message="You'r order was delete successfully!";
-     });
-    //  this.passOrderItems.emit(this.order);
-    //  this.orderService.ListOrderIsNotProvided();
-
+  this.hideOrder=true;
+     this.orderService.DeleteOrder(this.order.id);
  }
+ //הצגת הפריטים בהזמנה- הפעלת הפונקציה המתאימה מהסרוויס
  getAllItemsOrder(){
    this.orderService.getAllItemsOrder(this.order.id).then(result=>{
     this.itemsInOrder=result;
@@ -60,7 +51,9 @@ export class OrderComponent implements OnInit {
     this.hiden1=true;
   });
  }
+ //לחיצה על הכפתור של סגירת הפרטים משנה את תצוגת הכתפורים בהתאם
  closeDetails(){
+
    this.hiden=true;
    this.hiden1=false;
  }

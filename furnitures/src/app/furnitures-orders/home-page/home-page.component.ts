@@ -12,11 +12,12 @@ export class HomePageComponent implements OnInit {
      }
   public idWorker: number;
 
+  //נקבל את הקוד של העובד מהמסך של הכניסה, כדי שנוכל להשתמש בו בעת ביצוע הזמנה
   ngOnInit() {
     this.route.paramMap.subscribe(params=>{
       this.idWorker=+params.get('id'); });
-      // this.router.navigate(['do-order',this.idWorker]);
   }
+  //פונקציית התנתקות שתוביל למסך הכניסה
   LogOut() {
     this.router.navigate(['login']);
   }

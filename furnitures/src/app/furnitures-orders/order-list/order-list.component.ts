@@ -15,14 +15,11 @@ export class OrderListComponent implements OnInit {
   @Output() private passOrderItems: EventEmitter<FurnitureViewModel[]> = new EventEmitter<FurnitureViewModel[]>();
       
   constructor(private orderService:OrderService) {}
-  //private currentOrder: OrderViewModel;
 
   ngOnInit() {
   }
-
+//ביצוע הזמנה
  performOrder(){
-   debugger;
    this.passOrderItems.emit(this.currentFurnitures);
-  //this.orderService.doOrder(this.currentFurnitures);
  }
 }

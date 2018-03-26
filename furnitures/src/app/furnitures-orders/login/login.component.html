@@ -1,17 +1,24 @@
+<!-- מסך הכניסה -->
 <body>
 <p>
  please insert your name and password
 </p>
-<label>
-Name: 
-<input type="text" [(ngModel)]="currentWorker.name"/>
-</label><br/>
-<p></p>
-<label>
-password:
-<input type="text" [(ngModel)]="currentWorker.password"/>
-</label><br/>
-<p></p>
+<table align="center">
+    <tr>
+        
+<td width="30%"> Name: </td>
+<td width="70%"><input type="text" [(ngModel)]="currentWorker.name"/></td>
+</tr>
+<tr>
+<!-- <label> -->
+<td width="30%">Password:</td>
+<td width="70%"><input type="text" [(ngModel)]="currentWorker.password"/></td>
+</tr>
+</table>
+<!-- </label><br/> -->
+<!-- <p></p> -->
+<!-- כפתור שבלחיצה עליו תופעל הפעולה הבודקת אם העובד אכן קיים במערכת -->
 <button type="button" (click)="checkLogin()"class="btn btn-default">Login</button>
+<!-- הודעה שתוצג במקרה שהעובד לא קיים או אחד מהשדות ריק -->
 <p>{{this.message}}</p>
 </body>

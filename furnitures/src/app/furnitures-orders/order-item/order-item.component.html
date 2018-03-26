@@ -1,10 +1,11 @@
-
-  <table bordercolor="blue" width="50%">
-      <tr>
-  <td> {{item.furnitureName}}</td>
-  <td>{{item.furnitureColor}}</td>
-  <td>{{item.furnitureSize}}</td>
-  <td>{{item.furnitureMaterial}}<td>
-  <td> <input type="number"class="textarea" [(ngModel)]="item.amount"/></td>
-      </tr>
+<!-- קומפוננטה של פריט אחד לשם ביצוע הזמנה -->
+  <table bordercolor="gray" align="center" width="100%">
+      <!-- <tr> -->
+  <td align="left" >{{item.furnitureName}}</td>
+  <td align="right">{{item.furnitureColor}}</td>
+  <td align="right">{{item.furnitureSize}}</td>
+  <td align="right">{{item.furnitureMaterial}}<td>
+  <!-- כאן ניתן להכניס את הכמות וזה יתעדכן בהזמנה -->
+  <td align="right"> <input type="number"class="textarea" [(ngModel)]="item.amount"/></td>
+      <!-- </tr> -->
   </table>

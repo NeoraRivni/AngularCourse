@@ -1,16 +1,18 @@
+<!-- מסך המציג את רשימת הפריטים של הספק המתאים לשם ביצוע הזמנה -->
 <div>
-        <table >
+        <table width="100%">
             <tr>
-        <th> name</th>
-        <th> color</th>
-            <th> size</th>
-        <th> material</th>
-        <th> amount</th>
+        <td width="15%"> name</td>
+        <td width="15%"> color</td>
+        <td width="15%"> size</td>
+        <td width="17%"> material</td>
+        <td width="50%" > amount</td>
            </tr>
     </table>
 <div>
    <item *ngFor="let or of currentFurnitures" [item]="or"></item>
 </div>
+<!-- כפתור ביצוע הזמנה -->
     <button type="button" class="myButton" (click)="performOrder()">perform</button>
 </div>
 
