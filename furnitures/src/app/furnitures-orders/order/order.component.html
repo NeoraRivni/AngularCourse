@@ -3,21 +3,24 @@ orders -קומפוננטה פנימית של רשימת הזמנות -->
 <div  [hidden]="hideOrder">
 <table align="left" bordercolor="gray" width="60%" height="50px">
         <tr>
-    <td>{{order.id}}</td>
-    <td>{{order.orderDate}}</td>
-    <td>{{order.supplierName}}</td>
-    <td>{{order.workerName}}</td>    
-    <td>{{order.orderStatus}}</td>
+    <td width="6%"> {{order.id}}</td>
+    <td width="35%">{{order.orderDate}}</td>
+    <td width="8%">{{order.supplierName}}</td>
+    <td width="8%">{{order.workerName}}</td>    
+    <td width="6%">{{order.orderStatus}}</td>
+   
     </tr>
 </table>
     <!-- נציג ונחביא את הכפתורים בהתאם לרשימה בה אנו נמצאים -->
-    <table align="right"  width="40%" height="100%" >
+     <table align="right"  width="40%" height="100%" >
         <tr>
+            <td></td>
+        
         <!-- <tr width="40px"> -->
-    <td><div [hidden]= "hideButtons">
+     <td><div [hidden]= "hideButtons">
          <button type="button" class="myButton" (click)="OrderConfirmation()" >OK</button></div></td>        
     <td><div [hidden]="hideButtons">
-        <button type="button" class="myButton" (click)="DeleteOrder()" >Delete</button></div></td> 
+         <button type="button" class="myButton" (click)="DeleteOrder()" >Delete</button></div></td> 
     <td><div  [hidden]="hiden1">
         <button type="button" class="myButton" (click)="getAllItemsOrder()">View details</button></div></td>
     <td><div  [hidden]="hiden">
@@ -30,7 +33,7 @@ orders -קומפוננטה פנימית של רשימת הזמנות -->
       </table>
         <!-- </tr> -->
     <!-- </table> -->
-</div>
+</div>  
 
    
    
