@@ -37,9 +37,7 @@ export class OrderService {
 
         for(let item of ordersFromDB){
             debugger;
-            //if(item.orderDate.getFullYear() ==2018)
-            // debugger;
-            // {
+            
                 let vmOrderN:OrderNViewModel = new OrderNViewModel();
             vmOrderN.id=item.id;
             vmOrderN.orderStatus=item.orderStatus;
@@ -53,7 +51,6 @@ export class OrderService {
             vmOrderN.workerId=item.workerId;
             vmOrderN.orderDate=item.orderDate;            
             vmOrdersREsult.push(vmOrderN);
-        // }
     }
         return vmOrdersREsult; 
     }
@@ -108,28 +105,33 @@ export class OrderService {
         this.httpClient.delete(ordersUrl2).toPromise();
     }
     //פונקציה המבצעת הזמנה רק בתנאי שהוכנסו כמויות תקינות
-    async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<boolean>{
+    async doOrder(currentOrderVM : OrderViewModel, currentFurnituresVM : FurnitureViewModel[]) : Promise<number>{
+        let currentPrice=0;
         let newOrder:Order;
         let flag: boolean;
         flag=false;
         for (let item of currentFurnituresVM) 
            if(item.amount>0)
+           {
+           currentPrice=item.amount*item.furniturePrise+currentPrice;
             flag=true;
+           }
           if(flag)
-              { let currentOrder = new Order(new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
+              {
+                let currentOrder = new Order(new Date(), currentOrderVM.workerId, currentOrderVM.supplierId, false);
                  newOrder =  await this.httpClient.post<Order>(this.baseUrl + '/orders', currentOrder).toPromise();
                  let currentOrderItem : OrderItems;
                   for (let item of currentFurnituresVM) {
                      if(item.amount>0){
                         currentOrderItem = new OrderItems(newOrder.id,item.id ,item.amount);
                           await this.httpClient.post<OrderItems>(this.baseUrl+'/order_items',currentOrderItem).toPromise();
-                          }
-                      }
-                      return true;
+                           }
+                    }
+                      return currentPrice;
                }
-               else{
-                   return false;
-               }
+            //    else{
+            //        return false;
+            //    }
         }
         
 

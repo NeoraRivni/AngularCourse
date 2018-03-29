@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { HomePageComponent } from '../home-page/home-page.component';
 
+
 @Component({
   selector: 'do-order',
   templateUrl: './do-order.component.html',
@@ -21,6 +22,7 @@ export class DoOrderComponent implements OnInit {
   private suppliers:Supplier[] = new Array<Supplier>();
   private furnitures:FurnitureViewModel[] = new Array<FurnitureViewModel>();
   private message:string;
+  private sum:number;
   private hideList:boolean = true;
 
   constructor(private suppliersService:SupplierService,private furnituresService:FurnituresService,
@@ -37,6 +39,7 @@ export class DoOrderComponent implements OnInit {
   //הבאת רשימת הרהיטים לפי ספק- נפעיל את הפונקציה המתאימה מהסרוויס
   searchForFurnitures() {
     this.message="";
+    this.sum=null;
     this.furnituresService.getFurnitureForSupplier(this.currentOrder.supplierId).then(result=>{
       this.furnitures=result;
       
@@ -53,8 +56,10 @@ export class DoOrderComponent implements OnInit {
     debugger;
       this.orderService.doOrder(this.currentOrder,orderItemsLIst).then(result=>{
       this.hideList=true;
-      if (result)
-      this.message="You'r order was preformed successfully!";
+      this.sum=result;
+      if (result>0)
+      this.message="You'r order was preformed successfully! ";
+      this.message=this.message+  "The total amount of the order is  "+this.sum+" NIS";
       });
 }
 
